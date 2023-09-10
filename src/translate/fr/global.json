@@ -1,0 +1,130 @@
+{
+    "nav": {
+        "nav1": "Services",
+        "nav2": "Calculatrice",
+        "nav3": "Témoignages",
+        "nav4": "Blog",
+        "auth1": "Connexion",
+        "auth2": "Inscription"
+    },
+    "hero1": {
+        "title": "Livraison rapide et fiable - Votre temps est précieux!",
+        "ul": {
+            "li":{
+                "title": "Rencontre en 60-120 minutes",
+                "text": "Dans toute l'Allemagne et dans toutes les grandes villes d'Europe - actuellement en environ 72 minutes."
+            },
+            "li2": {
+                "title":"Livraison dans les meilleurs délais",
+                "text":"Nous assurons des livraisons directes et livrons des marchandises dès aujourd'hui."
+            },
+            "li3": {
+                "title":"Tout est question de transport sans souci",
+                "text":"Nous assurons un transport sans interruption et nous nous occupons de tous les détails."
+            }
+        },
+        "btn": {
+            "left":"Calculez le prix maintenant",
+            "right":"et réservez directement",
+            "text":"Plus de 36 000 envois ont été livrés au cours des 12 derniers mois."
+        }
+    },
+    "section1": {
+        "title":"Pourquoi choisir UK2EU",
+        "card": {
+            "card1": {
+                "title":"Transport express efficace :",
+                "text":"Notre propre flotte de véhicules est adaptée au traitement des envois express, ce qui nous permet de garantir des délais de transport plus rapides et une livraison en temps voulu."
+            },
+            "card2": {
+                "title":"Solutions LTL fiables",
+                "text":"Pour les petits volumes de marchandises, nos sous-traitants fiables proposent des options LTL flexibles et économiques adaptées à vos besoins spécifiques en matière de transport."
+            },
+            "card3": {
+                "title":"Transparence et communication",
+                "text":"Nous croyons en une communication transparente en vous tenant informé tout au long du processus de transport. Notre service client est toujours prêt à répondre rapidement à vos demandes."
+            },
+            "card4": {
+                "title":"Amélioration continue",
+                "text":"Nous nous efforçons d'améliorer en permanence nos services, en adaptant régulièrement nos services au paysage changeant après le BREXIT et à vos besoins changeants."
+            },
+            "card5": {
+                "text":"Chez UK2EU, nous sommes fiers de simplifier votre processus de transport. Notre engagement envers la satisfaction de la clientèle nous pousse à offrir des solutions fiables, efficaces et économiques pour tous vos besoins en matière de livraison. Choisissez UK2EU comme partenaire de transport et laissez-nous gérer les complexités du transport après le BREXIT, pendant que vous vous concentrez sur le développement de votre entreprise. Pour toute question ou pour commencer à expédier vos envois, n'hésitez pas à contacter notre équipe spécialisée. Nous avons hâte de vous servir! L'équipe UK2EU"
+            }
+        }
+    },
+    "section2": {
+        "title":"Avec UK2EU, plus de 20 000 clients expédient des marchandises plus rapidement"
+    },
+    "section3": {
+        "title":"À propos de nos véhicules de courrier",
+        "text":"Le tableau ci-dessous présente nos véhicules de courrier standard pour les livraisons express, avec un bref résumé des informations les plus importantes à leur sujet.",
+        "card": {
+            "title":"Petit fourgon",
+            "len":"cm",
+            "weight":"maximum 400 kg",
+            "count":"jusqu'à 2 palettes",
+            "sum":"à partir de"
+        }
+    },
+    "section4": {
+        "li1": "Chargement arrière",
+        "li2":"Chargement latéral",
+        "li3":"Chargement par le haut",
+        "li4":"Informations supplémentaires",
+        "no":"Non",
+        "desc":"Chargement facile de colis lourds (chacun pesant jusqu'à 400 kg)"
+    },
+    "section5": {
+        "title":"Que souhaitez-vous expédier?",
+        "title1":"Petits déménagements",
+        "title2":"Livraison de colis",
+        "title3":"Meubles vintage",
+        "title4":"Documents",
+        "title5":"Marchandises sur palettes"
+    },
+    "hero2": {
+        "title":"Service de messagerie pour des livraisons directes",
+        "title2":"Simplification des transports après le BREXIT entre le Royaume-Uni et les pays de l'UE. Bienvenue chez UK2EU, votre partenaire logistique fiable pour des solutions de transport sans faille entre le Royaume-Uni et les pays de l'UE. Avec notre propre flotte de véhicules pour le transport express et un réseau de sous-traitants fiables pour le transport de marchandises (LTL), nous sommes là pour simplifier vos besoins en matière de transport après le BREXIT.",
+        "title3":"Étant donné que l'ère post-BREXIT pose de nouveaux défis en matière de logistique transfrontalière, notre objectif principal est de rendre les transports internationaux simples et sans problème pour nos précieux clients. Notre équipe d'experts est bien informée des complexités des règles et des procédures douanières après le BREXIT, garantissant une livraison fluide à chaque étape."
+    },
+    "section6": {
+        "title":"Questions fréquentes",
+        "ask1":"UK2EU est-elle une bourse de fret européenne?",
+        "ask2":"Quels pays sont couverts par la bourse de transport UK2EU?",
+        "ask3":"Qui peut s'abonner à la bourse de fret numérique UK2EU?",
+        "ask4":"Combien coûte un abonnement à la bourse de transport UK2EU?"
+    },
+    "section7": {
+        "title":"Ce que disent nos clients",
+        "name":"Alexandra S.",
+        "date":"Il y a un mois",
+        "message":"Excellent service avec une excellente communication, des coursiers serviables et des prix très compétitifs."
+    },
+    "feedback": {
+        "title":"Contactez-nous!",
+        "name":"Votre nom",
+        "placeholder":"Entrez votre nom",
+        "num":"Numéro de téléphone",
+        "message":"Message",
+        "send":"Envoyer"
+    },
+    "footer": {
+        "col1": {
+            "title":"Société",
+            "li1":"À propos de nous",
+            "li2":"Services",
+            "li3":"Tarifs",
+            "li4":"Témoignages"
+        },
+        "col2": {
+            "title":"Aide",
+            "li1":"Politique de confidentialité",
+            "li2":"FAQ",
+            "li3":"Blog",
+            "li4":"Partenaires"
+        },
+        "col3":"Restez informé des développements en logistique",
+        "btn":"Contactez-nous"
+    }
+}

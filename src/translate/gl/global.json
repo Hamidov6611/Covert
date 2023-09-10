@@ -1,0 +1,130 @@
+{
+    "nav": {
+        "nav1": "Diensten",
+        "nav2": "Calculator",
+        "nav3": "Recensies",
+        "nav4": "Blog",
+        "auth1": "Inloggen",
+        "auth2": "Registratie"
+    },
+    "hero1": {
+        "title": "Snelle en betrouwbare levering - Uw tijd is kostbaar!",
+        "ul": {
+            "li": {
+                "title": "Ontmoeting binnen 60-120 minuten",
+                "text": "In heel Duitsland en in alle grote steden van Europa - momenteel ongeveer binnen 72 minuten."
+            },
+            "li2": {
+                "title": "Levering op de beste tijden",
+                "text": "Wij verzorgen directe verzending en leveren goederen nog dezelfde dag."
+            },
+            "li3": {
+                "title": "Zorgeloos transport",
+                "text": "Wij zorgen voor naadloos transport en besteden aandacht aan alle details."
+            }
+        },
+        "btn": {
+            "left": "Bereken de prijs nu",
+            "right": "en reserveer direct",
+            "text": "In de afgelopen 12 maanden hebben we meer dan 36.000 zendingen afgeleverd."
+        }
+    },
+    "section1": {
+        "title": "Waarom kiezen voor UK2EU",
+        "card": {
+            "card1": {
+                "title": "Efficiënt expressvervoer:",
+                "text": "Ons eigen wagenpark is aangepast voor het verwerken van expresszendingen, waardoor we snellere doorlooptijden en tijdige levering kunnen garanderen."
+            },
+            "card2": {
+                "title": "Betrouwbare LTL-oplossingen",
+                "text": "Voor kleine vrachtvolumes bieden onze betrouwbare onderaannemers flexibele en kosteneffectieve LTL-opties die aansluiten bij uw specifieke verzendbehoeften."
+            },
+            "card3": {
+                "title": "Transparantie en communicatie",
+                "text": "Wij geloven in transparante communicatie en houden u gedurende het hele transportproces op de hoogte. Ons klantenserviceteam staat altijd klaar om snel op uw vragen te reageren."
+            },
+            "card4": {
+                "title": "Voortdurende verbetering",
+                "text": "We streven naar voortdurende verbetering en verbeteren regelmatig onze diensten om ons aan te passen aan de veranderende omstandigheden na de BREXIT en aan uw veranderende eisen."
+            },
+            "card5": {
+                "text": "Bij UK2EU zijn we er trots op uw transportproces te vereenvoudigen. Onze focus op klanttevredenheid drijft ons om betrouwbare, efficiënte en kosteneffectieve oplossingen te bieden voor al uw leveringsbehoeften. Kies UK2EU als uw transportpartner en laat ons de complexiteiten van het post-BREXIT-vervoer voor u afhandelen, zodat u zich kunt concentreren op de groei van uw bedrijf. Voor vragen of om te beginnen met het verzenden van uw zendingen, aarzel niet om contact op te nemen met ons gespecialiseerde team. Wij kijken ernaar uit om u van dienst te zijn! Het UK2EU-team"
+            }
+        }
+    },
+    "section2": {
+        "title": "Met UK2EU versturen meer dan 20.000 klanten goederen sneller"
+    },
+    "section3": {
+        "title": "Over onze koeriersvoertuigen",
+        "text": "In de onderstaande tabel vindt u onze standaard koeriersvoertuigen met een beknopte beschrijving van de belangrijkste informatie over hen.",
+        "card": {
+            "title": "Kleine bestelwagen",
+            "len": "cm",
+            "weight": "maximaal 400 kg",
+            "count": "tot 2 pallets",
+            "sum": "vanaf"
+        }
+    },
+    "section4": {
+        "li1": "Achter laden",
+        "li2": "Zijdelings laden",
+        "li3": "Boven laden",
+        "li4": "Extra informatie",
+        "no": "Nee",
+        "desc": "Eenvoudig laden van zware pakketten (elk met een gewicht van niet meer dan 400 kg)"
+    },
+    "section5": {
+        "title": "Wat wilt u verzenden?",
+        "title1": "Kleine verhuizingen",
+        "title2": "Pakketbezorging",
+        "title3": "Vintage meubelen",
+        "title4": "Documenten",
+        "title5": "Palletgoederen"
+    },
+    "hero2": {
+        "title": "Koeriersdienst voor direct transport",
+        "title2": "Vereenvoudiging van het vervoer na BREXIT tussen het VK en EU-landen. Welkom bij UK2EU, uw betrouwbare logistieke partner voor naadloze transportoplossingen tussen het VK en EU-landen. Met ons eigen wagenpark voor expressvervoer en een netwerk van betrouwbare onderaannemers voor vrachtvervoer (LTL) zijn we hier om uw transportbehoeften na BREXIT te vereenvoudigen.",
+        "title3": "Aangezien het post-BREXIT-tijdperk nieuwe uitdagingen met zich meebrengt op het gebied van grensoverschrijdende logistiek, is ons primaire doel om internationaal vervoer eenvoudig en probleemloos te maken voor onze gewaardeerde klanten. Ons team van experts is goed bekend met de complexiteiten van de regels en douaneprocedures na BREXIT, wat zorgt voor een soepele levering in elke fase."
+    },
+    "section6": {
+        "title": "Veelgestelde vragen",
+        "ask1": "Is UK2EU een Europese vrachtbeurs?",
+        "ask2": "Welke landen worden gedekt door de UK2EU-transportbeurs?",
+        "ask3": "Wie kan zich abonneren op de UK2EU digitale vrachtbeurs?",
+        "ask4": "Hoeveel kost een abonnement op de UK2EU-transportbeurs?"
+    },
+    "section7": {
+        "title": "Wat onze klanten zeggen",
+        "name": "Alexandra S.",
+        "date": "Een maand geleden",
+        "message": "Uitstekende service met goede communicatie, behulpzame koeriers en zeer concurrerende prijzen."
+    },
+    "feedback": {
+        "title": "Neem contact met ons op!",
+        "name": "Uw naam",
+        "placeholder": "Voer uw naam in",
+        "num": "Telefoonnummer",
+        "message": "Bericht",
+        "send": "Versturen"
+    },
+    "footer": {
+        "col1": {
+            "title": "Bedrijf",
+            "li1": "Over ons",
+            "li2": "Diensten",
+            "li3": "Prijzen",
+            "li4": "Recensies"
+        },
+        "col2": {
+            "title": "Hulp",
+            "li1": "Privacybeleid",
+            "li2": "Veelgestelde vragen",
+            "li3": "Blog",
+            "li4": "Partners"
+        },
+        "col3": "Blijf op de hoogte van ontwikkelingen in de logistiek",
+        "btn": "Neem contact met ons op"
+    }
+}

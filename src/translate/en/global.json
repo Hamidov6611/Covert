@@ -1,0 +1,130 @@
+{
+    "nav": {
+        "nav1": "Services",
+        "nav2": "Calculator",
+        "nav3": "Reviews",
+        "nav4": "Blog",
+        "auth1": "Login",
+        "auth2": "Registration"
+    },
+    "hero1": {
+        "title": "Fast and Reliable Delivery - Your Time Matters!",
+        "ul": {
+            "li": {
+                "title": "Meeting in 60-120 minutes",
+                "text": "Throughout Germany and in all major European cities - currently approximately within 72 minutes."
+            },
+            "li2": {
+                "title": "Delivery in the Best Time",
+                "text": "We provide direct transportation and deliver goods today."
+            },
+            "li3": {
+                "title": "All Around Carefree Transport",
+                "text": "We ensure seamless transportation and take care of all the details."
+            }
+        },
+        "btn": {
+            "left": "Calculate the price now",
+            "right": "and book directly",
+            "text": "Over the last 12 months, we have delivered more than 36,000 shipments."
+        }
+    },
+    "section1": {
+        "title": "Why Choose UK2EU",
+        "card": {
+            "card1": {
+                "title": "Efficient Express Transport:",
+                "text": "Our own fleet of vehicles is adapted for processing express shipments, allowing us to provide faster transit times and timely delivery."
+            },
+            "card2": {
+                "title": "Reliable LTL Solutions",
+                "text": "For small cargo volumes, our reliable subcontractors offer flexible and economical LTL options tailored to your specific shipping needs."
+            },
+            "card3": {
+                "title": "Transparency and Communication",
+                "text": "We believe in transparent communication, keeping you informed throughout the transportation process. Our customer support team is always ready to respond to your inquiries promptly."
+            },
+            "card4": {
+                "title": "Continuous Improvement",
+                "text": "We strive for continuous improvement, regularly enhancing our services to adapt to the changing landscape post-BREXIT and meet your evolving requirements."
+            },
+            "card5": {
+                "text": "At UK2EU, we take pride in simplifying your transportation process. Our focus on customer satisfaction drives us to provide reliable, efficient, and cost-effective solutions for all your delivery needs. Choose UK2EU as your transportation partner and let us navigate the complexities of post-BREXIT shipping while you focus on growing your business. For any inquiries or to start working with your shipments, please don't hesitate to reach out to our specialized team. We look forward to serving you! The UK2EU Team"
+            }
+        }
+    },
+    "section2": {
+        "title": "With UK2EU, Over 20,000 Customers Ship Goods Faster"
+    },
+    "section3": {
+        "title": "About Our Courier Vehicles",
+        "text": "The table below shows our standard express delivery vehicles with a brief description of the most important information about them.",
+        "card": {
+            "title": "Small Van",
+            "len": "cm",
+            "weight": "maximum 400 kg",
+            "count": "up to 2 pallets",
+            "sum": "from"
+        }
+    },
+    "section4": {
+        "li1": "Rear Loading",
+        "li2": "Side Loading",
+        "li3": "Top Loading",
+        "li4": "Additional Information",
+        "no": "No",
+        "desc": "Easy loading of heavy parcels (each weighing no more than 400 kg)"
+    },
+    "section5": {
+        "title": "What Do You Want to Send?",
+        "title1": "Small Moves",
+        "title2": "Package Delivery",
+        "title3": "Vintage Furniture",
+        "title4": "Documents",
+        "title5": "Palletized Goods"
+    },
+    "hero2": {
+        "title": "Direct Transportation Courier Service",
+        "title2": "Simplifying Post-BREXIT Shipping Between the UK and EU Countries. Welcome to UK2EU, your reliable logistics partner for seamless transportation solutions between the UK and EU countries. With our own fleet designed for express transport and a network of dependable subcontractors for freight transportation (LTL), we are here to simplify your transportation needs after BREXIT.",
+        "title3": "As the post-BREXIT era poses new challenges in cross-border logistics, our primary goal is to make international shipping straightforward and hassle-free for our valued customers. Our team of experts is well-versed in the intricacies of post-BREXIT rules and customs procedures, ensuring smooth delivery at every stage."
+    },
+    "section6": {
+        "title": "Frequently Asked Questions",
+        "ask1": "Is UK2EU a European freight exchange?",
+        "ask2": "Which countries does the UK2EU transport exchange cover?",
+        "ask3": "Who can subscribe to the UK2EU digital freight exchange?",
+        "ask4": "How much does a subscription to the UK2EU transport exchange cost?"
+    },
+    "section7": {
+        "title": "What Our Customers Say",
+        "name": "Alexandra S.",
+        "date": "A month ago",
+        "message": "Excellent service with great communication, helpful couriers, and very competitive prices."
+    },
+    "feedback": {
+        "title": "Contact Us!",
+        "name": "Your Name",
+        "placeholder": "Enter Name",
+        "num": "Phone Number",
+        "message": "Message",
+        "send": "Send"
+    },
+    "footer": {
+        "col1": {
+            "title": "Company",
+            "li1": "About Us",
+            "li2": "Services",
+            "li3": "Prices",
+            "li4": "Reviews"
+        },
+        "col2": {
+            "title": "Help",
+            "li1": "Privacy Policy",
+            "li2": "FAQ",
+            "li3": "Blog",
+            "li4": "Partners"
+        },
+        "col3": "Stay updated on logistics developments",
+        "btn": "Contact Us"
+    }
+}
