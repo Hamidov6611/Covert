@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import RootLayout from "../../components/layouts/RootLayout";
 
 const BlogDetail = () => {
+  const [t] = useTranslation("global");
   return (
     <RootLayout title="Подробности блога">
       <div className=" w-[96%] sm:w-[90%] mx-auto pb-8">
