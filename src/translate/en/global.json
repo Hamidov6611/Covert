@@ -126,5 +126,51 @@
         },
         "col3": "Stay updated on logistics developments",
         "btn": "Contact Us"
+    },
+    "services": {
+        "title": "Our Services",
+        "card1": "Small Moves",
+        "card2": "Package Delivery",
+        "card3": "Vintage Furniture",
+        "blog": {
+            "title": "Our Blog",
+            "card1": {
+                "title": "How to make your freight offers more visible",
+                "text": "Now, with Teleroute, the process is simpler as the more detailed you make…",
+                "btn": "Read More"
+            }
+        }
+    },
+    "registration": {
+        "title": "Register as a Client",
+        "ui1": "Username",
+        "pl1": "Enter your username",
+        "ui2": "Password",
+        "pl2": "Enter your password",
+        "ask1": "I accept the Terms of Service for users",
+        "ask2": "I agree to receive emails about UK2EU offers",
+        "text": "UK2EU processes data to fulfill contracts, legal obligations, and consents. You have the right to access, correct, erase, restrict processing, data portability, withdraw consent, and object. Privacy Policy",
+        "ask3": "Already have an account?",
+        "res": "Log In",
+        "btn": "Register"
+    },
+    "login": {
+        "title": "Log In",
+        "ask1": "Don't have an account?",
+        "res1": "Register",
+        "ui1": "Email",
+        "pl1": "Enter your email address",
+        "pl2": "Enter your email address",
+        "ask2": "Remember me",
+        "btn": "Log In",
+        "forgot": "Forgot Password"
+    },
+    "password": {
+        "title": "Forgot Password?",
+        "ui1": "Email",
+        "pl1": "Enter your email address",
+        "btn": "Set Password",
+        "btn2": "Back to Login"
     }
+    
 }

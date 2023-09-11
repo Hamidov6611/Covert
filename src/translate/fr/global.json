@@ -126,5 +126,59 @@
         },
         "col3":"Restez informé des développements en logistique",
         "btn":"Contactez-nous"
+    },
+    "services": {
+        "title": "Nos Services",
+        "card1": "Petits Déménagements",
+        "card2": "Livraison de Colis",
+        "card3": "Mobilier Vintage",
+        "blog": {
+            "title": "Notre Blog",
+            "card1": {
+                "title": "Comment rendre vos offres de fret plus visibles",
+                "text": "Désormais, avec Teleroute, le processus est plus simple à mesure que vous le détaillez davantage...",
+                "btn": "Lire la suite"
+            }
+        }
+    },
+    "blog": {
+        "title": "Notre Blog",
+        "card": {
+            "title": "Cinq façons de réduire les coûts de transport",
+            "text": "Il existe de nombreux conseils que nous pouvons facilement suivre pour réduire les coûts de transport.",
+            "btn": "Lire plus"
+        }
+    },
+    "registration": {
+        "title": "Inscrivez-vous en tant que Client",
+        "ui1": "Nom d'utilisateur",
+        "pl1": "Entrez votre nom d'utilisateur",
+        "ui2": "Mot de passe",
+        "pl2": "Entrez votre mot de passe",
+        "ask1": "J'accepte les Conditions de Service pour les utilisateurs",
+        "ask2": "J'accepte de recevoir des e-mails sur les offres UK2EU",
+        "text": "UK2EU traite les données pour remplir les contrats, les obligations légales et les consentements. Vous avez le droit d'accéder, de corriger, d'effacer, de limiter le traitement, de la portabilité des données, de retirer le consentement et de vous opposer. Politique de confidentialité",
+        "ask3": "Vous avez déjà un compte?",
+        "res": "Connexion",
+        "btn": "S'inscrire"
+    },
+    "login": {
+        "title": "Connexion",
+        "ask1": "Pas de compte?",
+        "res1": "S'inscrire",
+        "ui1": "Adresse e-mail",
+        "pl1": "Entrez votre adresse e-mail",
+        "pl2": "Entrez votre adresse e-mail",
+        "ask2": "Se souvenir de moi",
+        "btn": "Connexion",
+        "forgot": "J'ai oublié le mot de passe"
+    },
+    "password": {
+        "title": "Mot de passe oublié ?",
+        "ui1": "Adresse e-mail",
+        "pl1": "Entrez votre adresse e-mail",
+        "btn": "Définir le mot de passe",
+        "btn2": "Retour à la connexion"
     }
+    
 }

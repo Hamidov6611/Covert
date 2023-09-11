@@ -126,5 +126,59 @@
         },
         "col3": "Blijf op de hoogte van ontwikkelingen in de logistiek",
         "btn": "Neem contact met ons op"
+    },
+    "services": {
+        "title": "Onze Diensten",
+        "card1": "Kleine Verhuizingen",
+        "card2": "Pakketbezorging",
+        "card3": "Vintage Meubelen",
+        "blog": {
+            "title": "Onze Blog",
+            "card1": {
+                "title": "Hoe u uw vrachtaanbiedingen zichtbaarder kunt maken",
+                "text": "Nu, met Teleroute, is het proces eenvoudiger naarmate u gedetailleerder wordt...",
+                "btn": "Lees Meer"
+            }
+        }
+    },
+    "blog": {
+        "title": "Onze Blog",
+        "card": {
+            "title": "Vijf Manieren om Transportkosten te Verlagen",
+            "text": "Er zijn veel tips die we gemakkelijk kunnen volgen om transportkosten te verlagen.",
+            "btn": "Lees Meer"
+        }
+    },
+    "registration": {
+        "title": "Registreer als Klant",
+        "ui1": "Gebruikersnaam",
+        "pl1": "Voer uw gebruikersnaam in",
+        "ui2": "Wachtwoord",
+        "pl2": "Voer uw wachtwoord in",
+        "ask1": "Ik accepteer de Gebruiksvoorwaarden voor gebruikers",
+        "ask2": "Ik ga akkoord met het ontvangen van e-mails over UK2EU-aanbiedingen",
+        "text": "UK2EU verwerkt gegevens om contracten, wettelijke verplichtingen en toestemmingen uit te voeren. U heeft het recht om toegang te krijgen, te corrigeren, te verwijderen, de verwerking te beperken, gegevensoverdraagbaarheid, toestemming in te trekken en bezwaar te maken. Privacybeleid",
+        "ask3": "Heeft u al een account?",
+        "res": "Inloggen",
+        "btn": "Registreren"
+    },
+    "login": {
+        "title": "Inloggen",
+        "ask1": "Heeft u geen account?",
+        "res1": "Registreren",
+        "ui1": "E-mail",
+        "pl1": "Voer uw e-mailadres in",
+        "pl2": "Voer uw e-mailadres in",
+        "ask2": "Onthoud mij",
+        "btn": "Inloggen",
+        "forgot": "Ik ben mijn wachtwoord vergeten"
+    },
+    "password": {
+        "title": "Wachtwoord Vergeten?",
+        "ui1": "E-mail",
+        "pl1": "Voer uw e-mailadres in",
+        "btn": "Stel een nieuw wachtwoord in",
+        "btn2": "Terug naar Inloggen"
     }
+    
 }
