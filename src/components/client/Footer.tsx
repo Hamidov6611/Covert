@@ -1,31 +1,32 @@
 import { Link, useLocation } from "react-router-dom";
 import { ReactNode, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = ():ReactNode => {
   const [isLang, setIsLang] = useState(false)
   const changeLang = () => setIsLang(prev => !prev)
   const {pathname} = useLocation()
-
+  const [t] = useTranslation("global");
 
   return (
  <div>
      <div className={`flex relative ${pathname !== '/calculator' && 'mt-[330px]'}`}>
      { pathname !== '/calculator' &&  ( <div className="w-[90%] md:w-[60%] mx-auto border h-[413px] bg-white ml-[5%] md:ml-[20%] absolute top-[-330px] rounded-lg shadow-2xl">
         <p className="text-center text-[#1348F9] text-[20px] sm:text-[24px] md:text-[32px] lg-text-[40px] mt-6 font-semibold">
-          Связаться с нами!
+          {t(`feedback.title`)}
         </p>
         <form className="mt-1 flex flex-col p-3 sm:p-6 relative">
           <div className="flex flex-col sm:flex-row sm:justify-between">
             <div className="w-[100%] sm:w-[38%] mb-4 sm:mb-0 flex flex-col">
-              <p className="mb-2 text-[#344054] font-medium">Ваше имя</p>
+              <p className="mb-2 text-[#344054] font-medium">{t(`feedback.name`)}</p>
               <input
                 type="text"
                 className="border w-[100%] py-2 rounded-md text-[#667085] text-[14px] px-3 focus:outline-[#1348F9] font-medium"
-                placeholder="Введите Имя"
+                placeholder={t(`feedback.placeholder`)}
               />
             </div>
             <div className="w-[100%] sm:w-[58%]">
-              <p className="mb-2 text-[#344054] font-medium">Номер телефона</p>
+              <p className="mb-2 text-[#344054] font-medium">{t(`feedback.num`)}</p>
               <input
                 type="text"
                 className="border w-[100%] py-2 rounded-md text-[#667085] text-[14px] px-3 focus:outline-[#1348F9] font-medium"
@@ -34,7 +35,7 @@ const Footer = ():ReactNode => {
             </div>
           </div>
           <div className="w-[100%] mt-3">
-            <p className="mb-2 text-[#344054] font-medium">Сообщение</p>
+            <p className="mb-2 text-[#344054] font-medium">{t(`feedback.message`)}</p>
             <textarea className="resize-none border w-[100%] py-2 rounded-md text-[#667085] text-[14px] px-3 focus:outline-[#1348F9] font-medium" />
           </div>
 
@@ -43,7 +44,7 @@ const Footer = ():ReactNode => {
               type="submit"
               className="mt-3 md:mt-10 bg-heroPrimary hover:bg-Primary transition duration-200 ease-in-out text-white font-semibold text-[18px] py-1 md:py-3 px-8 md:px-24 rounded-md"
             >
-              Отправить
+              {t(`feedback.send`)}
             </button>
           </div>
         </form>
@@ -93,28 +94,28 @@ const Footer = ():ReactNode => {
           <div className="flex flex-col">
             <Link to={"/"}>
               <p className="text-[#fff] font-bold text-[18px] sm:text-[20px] md:text-[23px]">
-                Компания
+                {t(`footer.col1.title`)}
               </p>
             </Link>
             <div className="mt-8 gap-y-4">
               <Link to={"/"}>
                 <p className="text-white mb-4 font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                  О нас
+                {t(`footer.col1.li1`)}
                 </p>
               </Link>
               <Link to={"/"}>
                 <p className="text-white mb-4 font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                  Услуги
+                {t(`footer.col1.li2`)}
                 </p>
               </Link>
               <Link to={"/"}>
                 <p className="text-white mb-4 font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                  Цены
+                {t(`footer.col1.li3`)}
                 </p>
               </Link>
               <Link to={"/"}>
                 <p className="text-white  font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                  Отзывы
+                {t(`footer.col1.li4`)}
                 </p>
               </Link>
             </div>
@@ -123,28 +124,28 @@ const Footer = ():ReactNode => {
           <div className="flex flex-col">
             <Link to={"/"}>
               <p className="text-[#fff] font-bold text-[18px] sm:text-[20px] md:text-[23px]">
-                Помощь
+              {t(`footer.col2.title`)}
               </p>
             </Link>
             <div className="mt-8 gap-y-4">
               <Link to={"/"}>
                 <p className="text-white mb-4 font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                  Политика и конфиденциальность
+                {t(`footer.col2.li1`)}
                 </p>
               </Link>
               <Link to={"/"}>
                 <p className="text-white mb-4 font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                  Справка
+                {t(`footer.col2.li2`)}
                 </p>
               </Link>
               <Link to={"/"}>
                 <p className="text-white mb-4 font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                  Блог
+                {t(`footer.col2.li3`)}
                 </p>
               </Link>
               <Link to={"/"}>
                 <p className="text-white  font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                  Партнеры
+                {t(`footer.col2.li4`)}
                 </p>
               </Link>
             </div>
@@ -153,7 +154,7 @@ const Footer = ():ReactNode => {
           <div className="flex flex-col mt-[-23px]">
             <Link to={"/"}>
               <p className="text-[#fff] font-bold text-[18px] sm:text-[20px] md:text-[23px]">
-                Следите за обновлениями в области логистики
+              {t(`footer.col3`)}
               </p>
             </Link>
             <div className="mt-8 gap-y-4">
@@ -207,7 +208,7 @@ const Footer = ():ReactNode => {
               </div>
               <Link to={"/"}>
                 <button className="border border-[#1348F9] text-[#1348F9] px-10 py-3 rounded-md mb-4 transition duration-300 ease-in-out hover:bg-[#1348F9] hover:text-white">
-                  Связаться с нами
+                {t(`footer.btn`)}
                 </button>
               </Link>
               <div className="flex mb-4 justify-start items-start">
