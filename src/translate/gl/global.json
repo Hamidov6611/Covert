@@ -96,6 +96,7 @@
         "ask4": "Hoeveel kost een abonnement op de UK2EU-transportbeurs?"
     },
     "section7": {
+        "hero": "Onze Recensies",
         "title": "Wat onze klanten zeggen",
         "name": "Alexandra S.",
         "date": "Een maand geleden",
@@ -132,6 +133,8 @@
         "card1": "Kleine Verhuizingen",
         "card2": "Pakketbezorging",
         "card3": "Vintage Meubelen",
+        "hover1": "Nu boeken",
+        "hover2": "Meer informatie",
         "blog": {
             "title": "Onze Blog",
             "card1": {
