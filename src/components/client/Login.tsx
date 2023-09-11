@@ -1,6 +1,7 @@
 
 import { Checkbox } from "@mui/material";
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface propsLogin {
   setIsLogin: (value: boolean) => void;
@@ -10,7 +11,7 @@ interface propsLogin {
 
 const Login: FC<propsLogin> = ({ setIsLogin, setIsRegister, setIsForgotPassword }) => {
   const [checkedproccess, setCheckedProccess] = useState<boolean>(false);
-
+  const [t] = useTranslation("global");
   const handleClick = () => {
     setIsRegister(true);
     setIsLogin(false);
@@ -44,37 +45,37 @@ const Login: FC<propsLogin> = ({ setIsLogin, setIsRegister, setIsForgotPassword 
         </div>
         <div className="my-2 sm:my-4 flex items-center">
           <p className="font-semibold text-[16px] sm:text-[24px] md:text-[26px] lg:text-[30px] text-lightGreey font-montserrat">
-            Вход
+            {t(`login.title`)}
           </p>
           <div className="flex items-center sm:mt-2">
-            <p className="text-[14px] sm:text-[20px] ml-5 font-montserrat">Нет аккаунта?</p>
+            <p className="text-[14px] sm:text-[20px] ml-5 mr-2 font-montserrat">{t(`login.ask1`)}</p>
             <button
               onClick={handleClick}
               className="ml-1 text-[14px] sm:text-[20px] text-blue-400 font-montserrat"
             >
-              Регистрация
+              {t(`login.res1`)}
             </button>
           </div>
         </div>
         <div className="mb-2 mt-2 sm:mt-3 sm:mb-3 flex flex-col">
           <p className="mb-2 text-[#344054] font-medium text-[15px] sm:text-[21px]  font-montserrat">
-            Электронная почта
+          {t(`login.ui1`)}
           </p>
           <input
             type="text"
             className="border w-[100%] py-2 rounded-md text-[#667085] text-[14px] px-3 focus:outline-[#1348F9] font-medium"
-            placeholder="Введите адрес электронной почты"
+            placeholder={t(`login.pl1`)}
           />
         </div>
 
         <div className="mb-2 mt-2 sm:mt-3 sm:mb-3 flex flex-col">
           <p className="mb-2 text-[#344054] font-medium text-[15px] sm:text-[21px]  font-montserrat">
-            Электронная почта
+            {t(`login.ui1`)}
           </p>
           <input
             type="text"
             className="border w-[100%] py-2 rounded-md text-[#667085] text-[14px] px-3 focus:outline-[#1348F9] font-medium"
-            placeholder="Введите свой адрес электронной почты"
+            placeholder={t(`login.pl2`)}
           />
         </div>
 
@@ -87,7 +88,7 @@ const Login: FC<propsLogin> = ({ setIsLogin, setIsRegister, setIsForgotPassword 
           </div>
           <div className="w-[100%] sm:w-[66%]">
             <p className="ml-3 sm:ml-0 font-medium text-lightGreey text-[12px] sm:text-[17px]  font-montserrat">
-              Запомнить меня
+            {t(`login.ask2`)}
             </p>
           </div>
         </div>
@@ -97,13 +98,13 @@ const Login: FC<propsLogin> = ({ setIsLogin, setIsRegister, setIsForgotPassword 
             type="submit"
             className="md:mt-4 bg-heroPrimary hover:bg-Primary transition duration-200 ease-in-out text-white font-semibold text-[17px] sm:text-[18px] py-1 md:py-3 px-8 md:px-24 rounded-md"
           >
-            Вход
+            {t(`login.btn`)}
           </button>
         </div>
 
         <button 
         onClick={handleForgotPassword}
-        className="mt-4 text-[#23A879] text-[14px] font-montserrat">Я незнаю пароля</button>
+        className="mt-4 text-[#23A879] text-[14px] font-montserrat">{t(`login.forgot`)}</button>
       </div>
     </div>
   );
