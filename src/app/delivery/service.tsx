@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import RootLayout from "../../components/layouts/RootLayout";
+import { useTranslation } from "react-i18next";
 
 const Page = () => {
+  const [t] = useTranslation("global");
   return (
     <RootLayout title="Услуги">
       <div className="pb-[100px] sm:pb-[300px]">
@@ -15,7 +17,7 @@ const Page = () => {
             />
           </div>
           <p className="font-semibold text-lightGreey text-[22px] sm:text-[28px] md:text-[35px] lg:text-[65px] text-center pt-6 sm:pt-16">
-            Наши услуги
+            {t(`services.title`)}
           </p>
 
           <div className="md:w-[90%] w-[100%] mx-auto mt-12 sm:mt-24 px-4 sm:px-0">
@@ -30,14 +32,14 @@ const Page = () => {
                     alt="card"
                   />
                   <p className="mt-2 font-semibold text-[18px] sm:text-[22px] text-lightGreey">
-                    Небольшие переезды
+                  {t(`services.card1`)}
                   </p>
                 </div>
                 <div className="card1Content">
                   <button className="bg-[#1348F9] rounded-lg py-2 px-6 text-white">
-                    Забронировать сейчас
+                  {t(`services.hover1`)}
                   </button>
-                  <p className="text-[16px] text-white">Подробнее</p>
+                  <p className="text-[16px] text-white">{t(`services.hover2`)}</p>
                 </div>
               </div>
               <div className="relative card2">
@@ -50,7 +52,7 @@ const Page = () => {
                     alt="card"
                   />
                   <p className="mt-2 font-semibold text-[18px] sm:text-[22px] text-lightGreey">
-                    Доставка пакетов
+                  {t(`services.card2`)}
                   </p>
                 </div>
                 <div></div>
@@ -65,7 +67,7 @@ const Page = () => {
                     alt="card"
                   />
                   <p className="mt-2 font-semibold text-[18px] sm:text-[22px] text-lightGreey">
-                    Винтажная мебель
+                  {t(`services.card3`)}
                   </p>
                 </div>
                 <div></div>
@@ -80,14 +82,14 @@ const Page = () => {
                     alt="card"
                   />
                   <p className="mt-2 font-semibold text-[18px] sm:text-[22px] text-lightGreey">
-                    Небольшие переезды
+                  {t(`services.card1`)}
                   </p>
                 </div>
                 <div className="card1Content">
                   <button className="bg-[#1348F9] rounded-lg py-2 px-6 text-white">
-                    Забронировать сейчас
+                  {t(`services.hover1`)}
                   </button>
-                  <p className="text-[16px] text-white">Подробнее</p>
+                  <p className="text-[16px] text-white">{t(`services.hover2`)}</p>
                 </div>
               </div>
               <div className="relative card1">
@@ -100,20 +102,20 @@ const Page = () => {
                     alt="card"
                   />
                   <p className="mt-2 font-semibold text-[18px] sm:text-[22px] text-lightGreey">
-                    Небольшие переезды
+                  {t(`services.card1`)}
                   </p>
                 </div>
                 <div className="card1Content">
                   <button className="bg-[#1348F9] rounded-lg py-2 px-6 text-white">
-                    Забронировать сейчас
+                  {t(`services.hover1`)}
                   </button>
-                  <p className="text-[16px] text-white">Подробнее</p>
+                  <p className="text-[16px] text-white">{t(`services.hover2`)}</p>
                 </div>
               </div>
             </div>
 
             <p className="font-semibold text-lightGreey text-[22px] sm:text-[28px] md:text-[35px] lg:text-[65px] pt-16">
-              Наш Блог
+            {t(`services.blog.title`)}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-8 gap-x-8 gap-y-8">
               <div className="h-[480px] relative border rounded-[24px] shadow-xl">
@@ -129,16 +131,15 @@ const Page = () => {
                     03.07.2023
                   </p>
                   <p className="mt-4 font-semibold text-[18.27px] text-lightGreey">
-                    How to make your freight offers more visible
+                    {t(`services.blog.card1.title`)}
                   </p>
                   <p className="text-[15.99px] text-lightGreey font-light mt-2 line-clamp-2">
-                    Now, with Teleroute, the process is simpler as the more
-                    detailed you make…
+                    {t(`services.blog.card1.text`)}
                   </p>
                   <div className="absolute bottom-6 right-6">
                     <Link to={"/"}>
                       <p className="text-[#1348F9] text-[17px] font-semibold">
-                        Читать далее
+                       {t(`services.blog.card1.btn`)}
                       </p>
                     </Link>
                   </div>
@@ -158,16 +159,15 @@ const Page = () => {
                     03.07.2023
                   </p>
                   <p className="mt-4 font-semibold text-[18.27px] text-lightGreey">
-                    How to make your freight offers more visible
+                    {t(`services.blog.card1.title`)}
                   </p>
                   <p className="text-[15.99px] text-lightGreey font-light mt-2 line-clamp-2">
-                    Now, with Teleroute, the process is simpler as the more
-                    detailed you make…
+                    {t(`services.blog.card1.text`)}
                   </p>
                   <div className="absolute bottom-6 right-6">
                     <Link to={"/"}>
                       <p className="text-[#1348F9] text-[17px] font-semibold">
-                        Читать далее
+                       {t(`services.blog.card1.btn`)}
                       </p>
                     </Link>
                   </div>
@@ -187,16 +187,15 @@ const Page = () => {
                     03.07.2023
                   </p>
                   <p className="mt-4 font-semibold text-[18.27px] text-lightGreey">
-                    How to make your freight offers more visible
+                    {t(`services.blog.card1.title`)}
                   </p>
                   <p className="text-[15.99px] text-lightGreey font-light mt-2 line-clamp-2">
-                    Now, with Teleroute, the process is simpler as the more
-                    detailed you make…
+                    {t(`services.blog.card1.text`)}
                   </p>
                   <div className="absolute bottom-6 right-6">
                     <Link to={"/"}>
                       <p className="text-[#1348F9] text-[17px] font-semibold">
-                        Читать далее
+                       {t(`services.blog.card1.btn`)}
                       </p>
                     </Link>
                   </div>
@@ -216,16 +215,15 @@ const Page = () => {
                     03.07.2023
                   </p>
                   <p className="mt-4 font-semibold text-[18.27px] text-lightGreey">
-                    How to make your freight offers more visible
+                    {t(`services.blog.card1.title`)}
                   </p>
                   <p className="text-[15.99px] text-lightGreey font-light mt-2 line-clamp-2">
-                    Now, with Teleroute, the process is simpler as the more
-                    detailed you make…
+                    {t(`services.blog.card1.text`)}
                   </p>
                   <div className="absolute bottom-6 right-6">
                     <Link to={"/"}>
                       <p className="text-[#1348F9] text-[17px] font-semibold">
-                        Читать далее
+                       {t(`services.blog.card1.btn`)}
                       </p>
                     </Link>
                   </div>
