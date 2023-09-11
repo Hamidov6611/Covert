@@ -96,6 +96,7 @@
         "ask4":"Combien coûte un abonnement à la bourse de transport UK2EU?"
     },
     "section7": {
+        "hero": "Nos Avis",
         "title":"Ce que disent nos clients",
         "name":"Alexandra S.",
         "date":"Il y a un mois",
@@ -132,6 +133,8 @@
         "card1": "Petits Déménagements",
         "card2": "Livraison de Colis",
         "card3": "Mobilier Vintage",
+        "hover1": "Réserver maintenant",
+        "hover2": "En savoir plus",
         "blog": {
             "title": "Notre Blog",
             "card1": {
