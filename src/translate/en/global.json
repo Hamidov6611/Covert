@@ -96,6 +96,7 @@
         "ask4": "How much does a subscription to the UK2EU transport exchange cost?"
     },
     "section7": {
+        "hero": "Our Reviews",
         "title": "What Our Customers Say",
         "name": "Alexandra S.",
         "date": "A month ago",
@@ -132,6 +133,8 @@
         "card1": "Small Moves",
         "card2": "Package Delivery",
         "card3": "Vintage Furniture",
+        "hover1": "Book Now",
+        "hover2": "Learn More",
         "blog": {
             "title": "Our Blog",
             "card1": {
