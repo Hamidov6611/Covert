@@ -4,6 +4,7 @@ import { AddClient, AddConsignessComp, AddDispatch, AddShippers, AdminLogin, Adm
 import ChioggiaMap from "./Map"
 import { AuthUser, UserContext } from "./context/userContext";
 import { useEffect, useState } from "react";
+import { Gruze, UserHomePage } from "./app/user";
 
 function App() {
   const [user, setUser] = useState<AuthUser | null>(null);
@@ -38,6 +39,8 @@ function App() {
         <Route path="/rates" element={<Rates />} />
         <Route path="/way" element={<Way />} />
         <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/user-home" element={<UserHomePage />} />
+        <Route path="/user-about" element={<Gruze />} />
       </Routes>
     </UserContext.Provider>
   )
