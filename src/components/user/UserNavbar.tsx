@@ -73,12 +73,20 @@ const UserNavbar = () => {
             >
               Забронировать сейчас
             </Link>
-            <a className="my-2  transform text-white hover:text-[#1348F9] dark:hover:text-blue-400 md:mx-4 md:my-0 text-lg font-medium border hover:font-medium p-3 rounded-lg hover:bg-white hover:border-[#1348F9] transition-all duration-50 ">
+            <Link to={'/'} className="my-2  transform text-white hover:text-[#1348F9] dark:hover:text-blue-400 md:mx-4 md:my-0 text-lg font-medium border hover:font-medium p-3 rounded-lg hover:bg-white hover:border-[#1348F9] transition-all duration-50 ">
               Мои отправления
-            </a>
-            <a className="my-2  transform text-white hover:text-[#1348F9] dark:hover:text-blue-400 md:mx-4 md:my-0 text-lg font-medium border hover:font-medium p-3 rounded-lg hover:bg-white hover:border-[#1348F9] transition-all duration-50 ">
+            </Link>
+            <Link to={'/'} className="my-2  transform text-white hover:text-[#1348F9] dark:hover:text-blue-400 md:mx-4 md:my-0 text-lg font-medium border hover:font-medium p-3 rounded-lg hover:bg-white hover:border-[#1348F9] transition-all duration-50 ">
               Калькулятор
-            </a>
+            </Link>
+
+            <Link to={'/'} className="my-2 md:hidden transform text-white hover:text-[#1348F9] dark:hover:text-blue-400 md:mx-4 md:my-0 text-lg font-medium border hover:font-medium p-3 rounded-lg hover:bg-white hover:border-[#1348F9] transition-all duration-50 ">
+            Мои отправления
+            </Link>
+
+            <Link to={'/'} className="my-2 md:hidden transform text-white hover:text-[#1348F9] dark:hover:text-blue-400 md:mx-4 md:my-0 text-lg font-medium border hover:font-medium p-3 rounded-lg hover:bg-white hover:border-[#1348F9] transition-all duration-50 ">
+            Сообщения
+            </Link>
           </div>
           <div className="flex justify-center flex-row items-center">
             <div className="h-16 w-16 bg-white rou rounded-full flex justify-center items-center">
