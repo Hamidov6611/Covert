@@ -4,19 +4,12 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
-import { ReactNode, useState } from "react";
+import { ReactNode, useContext, useState } from "react";
 import LanguageIcon from "@mui/icons-material/Language";
 import { ForgotPassword, Login, Register } from ".";
-import { useEffect } from "react";
-import Cookies from "js-cookie";
-import { BASE_URL } from "../../service/auth";
-import axios from "axios";
 import { useTranslation } from "react-i18next";
+import { UserContext } from "../../context/userContext";
 
-interface userProps {
-  username: string;
-  password: string;
-}
 
 type langType = {
   id: number;
@@ -40,7 +33,10 @@ const Navbar = (): ReactNode => {
   const [isLang, setIsLang] = useState(false);
   const [t, i18n] = useTranslation("global");
   const [isHead, setIsHead] = useState<boolean>(false);
-  let [data, setData] = useState<userProps>();
+
+  const {user, setUser} = useContext(UserContext)
+
+  console.log(user)
 
   const changeLang = () => setIsLang((prev) => !prev);
 
@@ -61,25 +57,13 @@ const Navbar = (): ReactNode => {
     setLang(newArr);
   };
 
-  const getData = async () => {
-    const token = Cookies.get("token");
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token ? JSON.parse(token) : ""}`,
-      },
-    };
 
-    const { data } = await axios.get(
-      `${BASE_URL}/a_api/admin_panel/user_profiles_views/`,
-      config
-    );
-    // console.log(data)
-    setData(data);
-  };
+  const logOut = () => {
+    setUser(null)
+    
+  }
 
-  useEffect(() => {
-    getData();
-  }, []);
+  
   return (
     <div>
       <div
@@ -138,9 +122,9 @@ const Navbar = (): ReactNode => {
               >
                 {t(`nav.auth1`)}
               </button>
-              {data && data?.username?.length > 0 ? (
+              {user && user?.username?.length > 0 ? (
                 <button className="font-bold mr-5 text-[17px] border text-white p-3 rounded-md  hover:border-transparent transition duration-200 ease-in-out hover:bg-white hover:text-[#1348F9]">
-                  {data?.username}
+                  {user?.username}
                 </button>
               ) : (
                 <button

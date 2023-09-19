@@ -1,8 +1,10 @@
 import axios from "axios"
 import Cookies from 'js-cookie';
 import { Checkbox } from "@mui/material";
-import React, { FC, useState } from "react";
+import React, { FC, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { UserContext } from "../../context/userContext";
+import { BASE_URL } from "../../service/auth";
 
 interface propsRegister {
   setIsRegister: (value: boolean) => void;
@@ -14,6 +16,7 @@ const Register: FC<propsRegister> = ({ setIsRegister, setIsLogin }) => {
   const [checkedproccess2, setCheckedProccess2] = useState<boolean>(false);
   const [username, setUserName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [count, setCount] = useState<number>(0)
   const [t] = useTranslation("global");
   const handleOnchange1 = (e: React.ChangeEvent<HTMLInputElement>) =>
     setUserName(e.target.value);
@@ -25,16 +28,57 @@ const Register: FC<propsRegister> = ({ setIsRegister, setIsLogin }) => {
     setIsLogin(true);
   };
 
+  const { setUser } = useContext(UserContext)
 
+  
+
+  const getData = async () => {
+    const token = Cookies.get("token");
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token ? JSON.parse(token) : ""}`,
+      },
+    };
+
+    const { data } = await axios.get(
+      `${BASE_URL}/a_api/admin_panel/user_profiles_views/`,
+      config
+    );
+    console.log(data)
+    let user ={
+      username: data?.username,
+      id: data?.id,
+      groups: data?.groups
+    }
+    
+    localStorage.setItem('user', JSON.stringify(user));
+    setUser({
+      username: data?.username,
+      id: data?.id,
+      groups: data?.groups
+    })
+  };
+
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  
   const postData = async (e: any) => {
     e.preventDefault()
+    setCount(prev => prev + 1)
     let postData = {username, password}
     const {data} = await axios.post(`http://45.12.72.210:8000/a_api/admin_panel/user_register_views/`, postData)
     Cookies.set("token", JSON.stringify(data?.msg?.accsess))
     Cookies.set("user", JSON.stringify(postData))
     setIsRegister(false)
+    console.log(data)
+    await getData()
   }
 
+ 
+ 
 
   return (
     <div

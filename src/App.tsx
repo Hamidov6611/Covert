@@ -1,14 +1,24 @@
 import { Route, Routes } from "react-router-dom"
 import { Blog, BlogDetail, Calculator, Main, Reviews, Service } from "./app/delivery"
 import { AddClient, AddConsignessComp, AddDispatch, AddShippers, AdminLogin, AdminPage, Chat, Clients, Conignees, Dispatch, Message, Rates, Shippers, Wallet, Way } from "./app/dashboard"
+import ChioggiaMap from "./Map"
+import { AuthUser, UserContext } from "./context/userContext";
+import { useEffect, useState } from "react";
 
 function App() {
-
+  const [user, setUser] = useState<AuthUser | null>(null);
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
   return (
-    <>
+    <UserContext.Provider value={{user, setUser}}>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/services" element={<Service />} />
+        <Route path="/map" element={<ChioggiaMap />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/reviews" element={<Reviews />} />
@@ -29,7 +39,7 @@ function App() {
         <Route path="/way" element={<Way />} />
         <Route path="/admin-login" element={<AdminLogin />} />
       </Routes>
-    </>
+    </UserContext.Provider>
   )
 }
 

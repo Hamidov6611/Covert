@@ -1,4 +1,4 @@
-
+import './side.css'
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -9,9 +9,9 @@ const AdminSidebar = () => {
   const [side4Drop, setSide4Drop] = useState(true);
   const [side5Drop, setSide5Drop] = useState(true);
   return (
-    <div className="w-[20%] fixed top-0 left-0  h-[100vh] bg-[#2F2E40]">
+    <div className="w-[20%] fixed top-0 left-0 overflow-y-scroll h-[100vh] bg-[#2F2E40]">
       <div className="w-[100%] flex flex-col">
-        <div className="h-[100px] bg-Primary flex justify-center items-center">
+        <div className="h-[100px] sticky top-0 bg-Primary overflow-hidden flex justify-center items-center">
           <p className="text-[30px] font-semibold text-white mb-4 font-montserrat">
             Администратор
           </p>
@@ -421,38 +421,11 @@ const AdminSidebar = () => {
                     </div>
                   </div>
                 </Link>
-                {/* <Link
-                  to={"/dispatch"}
-                  
-                  className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
-                >
-                  <div className="flex w-[100%] mx-6 ">
-                    <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
-                    <div className="">
-                      <p className="ml-4  font-medium">
-                      Сообщения
-                      </p>
-                    </div>
-                  </div>
-                </Link> */}
+                
               </div>
             )}
 
-            {/* <Link to={"/admin"} className="nav-link flex">
-              <div className="flex w-[100%] mx-6">
-                <div className="w-7 h-6">
-                  <img
-                    src="/side5.svg"
-                    alt="side1"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-                <div>
-                  <p className="ml-4 text-heroLight font-medium">Сообщения</p>
-                </div>
-              </div>
-            </Link> */}
+           
             <Link
               to={"/wallet"}
               className={`text-heroLight nav-link flex justify-between items-center`}
@@ -507,7 +480,7 @@ const AdminSidebar = () => {
                 </div>
               </div>
             </Link>
-            <Link to={"/admin"} className="nav-link flex">
+            <Link to={"/admin"} className="nav-link flex mb-12">
               <div className="flex w-[100%] mx-6">
                 <div className="w-7 h-6">
                   <img
