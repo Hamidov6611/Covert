@@ -25,7 +25,7 @@ import {
   Way,
 } from "./app/dashboard";
 import ChioggiaMap from "./Map";
-import { User, UserContext } from "./context/userContext";
+import {  UserContext } from "./context/userContext";
 import { useEffect, useState } from "react";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import {
@@ -39,24 +39,26 @@ import { SideContext } from "./context/sidemenu";
 
 function App() {
   const [user, setUser] = useState();
-  const [side, setSide] = useState<boolean>(false);
+  const [side, setSide] = useState(false);
+  const [isUser, setIsUser] = useState(false)
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
+      setIsUser(true)
     }
   }, []);
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, isUser, setIsUser }}>
       <SideContext.Provider value={{ side, setSide }}>
         <div className="relative w-full h-full">
           {side && (
-            <div className="bg-white shadow-xl border rounded-md py-3 px-8 fixed right-[5.2%] top-[100px] md:top-[140px] z-50 md:z-30">
+            <div className="bg-white min-w-[250px] shadow-xl border rounded-md py-3 px-8 fixed right-[5.2%] top-[100px] md:top-[140px] z-50 md:z-30">
             <p className="text-[15px] md:text-[19px] text-[#1348F9] font-medium md:font-semibold lg:font-bold">
-              Александр Алавдий
+              {user?.first_name} {user?.last_name}
             </p>
             <p className="text-[14px] font-normal md:text-[16px] lg:tetx-[18px] mt-2 text-[#2F2E40]">
-              alexander111@gmail.com
+              {user?.email}
             </p>
             <p className="mt-2 text-[13px] sm:text-[14px] md:text-[16px] font-light md:font-normal text-[#2F2E40]">
               ID: 2965456

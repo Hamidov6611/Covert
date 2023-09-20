@@ -9,7 +9,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import { ForgotPassword, Login, Register } from ".";
 import { useTranslation } from "react-i18next";
 import { UserContext } from "../../context/userContext";
-
+import Cookies from "js-cookie";
 import { SideContext } from "../../context/sidemenu";
 
 
@@ -38,7 +38,7 @@ const Navbar = (): ReactNode => {
 
  
 
-  const {user} = useContext(UserContext)
+  const {user, isUser} = useContext(UserContext)
   const {setSide} = useContext(SideContext)
 
 
@@ -61,7 +61,7 @@ const Navbar = (): ReactNode => {
   };
 
   const clickHandler = () => {
-    if(user?.username?.length < 0) {
+    if(!isUser) {
       setIsRegister(true)
     }else {
       setSide((prev: boolean) => !prev)
@@ -71,7 +71,7 @@ const Navbar = (): ReactNode => {
   return (
     <div className="">
       <div
-        className={`h-[90px] lg:h-[133px] w-full bg-[#1348F9] hidden lg:flex items-center left-0 top-0 sticky top-0 z-50`}
+        className={`h-[90px] lg:h-[133px] w-full bg-[#1348F9] hidden lg:flex items-center left-0 top-0 sticky  z-50`}
       >
        
         <div className="w-[100%] md:w-[90%] mx-auto lg:flex items-center hidden">
@@ -121,7 +121,7 @@ const Navbar = (): ReactNode => {
               </Link>
             </div>
             <div className="w-[55%] flex justify-end items-center">
-              {!(user && user?.username?.length > 0) && (
+              {!isUser && (
                 <button
                 onClick={() => setIsLogin(true)}
                 className="text-[18px] font-semibold text-white mr-5 hover:text-gray-900"
@@ -129,10 +129,10 @@ const Navbar = (): ReactNode => {
                 {t(`nav.auth1`)}
               </button>
               )}
-              {user && user?.username?.length > 0 ? (
+              {isUser ? (
                 <button
                 onClick={() => setSide((prev: boolean) => !prev)}
-                className="font-bold mr-5 text-[17px] border text-white p-3 rounded-md  hover:border-transparent transition duration-200 ease-in-out hover:bg-white hover:text-[#1348F9]">
+                className="font-bold cursor-pointer mr-5 text-[17px] border text-white p-3 rounded-md  hover:border-transparent transition duration-200 ease-in-out hover:bg-white hover:text-[#1348F9]">
                   {user?.username}
                 </button>
               ) : (

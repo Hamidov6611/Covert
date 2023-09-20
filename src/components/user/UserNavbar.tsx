@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { SideContext } from "../../context/sidemenu";
+import { UserContext } from "../../context/userContext";
 
 const UserNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const {user} = useContext(UserContext)
+  const {setSide}= useContext(SideContext)
   return (
     <div className="sticky top-0 z-50">
       <nav className="relative bg-[#1348F9] shadow h-[80px] md:h-[133px]">
@@ -88,16 +93,18 @@ const UserNavbar = () => {
             Сообщения
             </Link>
           </div>
-          <div className="flex justify-center flex-row items-center">
+          <button
+          onClick={() => setSide((prev: boolean) => !prev)}
+          className="flex justify-center flex-row items-center">
             <div className="h-16 w-16 bg-white rou rounded-full flex justify-center items-center">
               <p className="m-0 p-0 font-semibold text-[#1348F9]  text-lg tracking-[0.23px]">
-                A A
+              {user?.username[0]}
               </p>
             </div>
 
             <div className="flex ml-4 ">
 
-            <p className="text-white font-bold text-lg mr-2">Александр</p>
+            <p className="text-white font-bold text-lg mr-2">{user?.username}</p>
             <img
               src={"/Vector.svg"}
               alt="ru"
@@ -106,7 +113,7 @@ const UserNavbar = () => {
               className="cursor-pointer"
             />
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </nav>

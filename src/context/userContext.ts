@@ -25,5 +25,5 @@ export type UserContextProviderType = {
   children: React.ReactNode;
 };
 
-export const UserContext = createContext<User>({});
+export const UserContext = createContext(null);
 

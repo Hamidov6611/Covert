@@ -78,10 +78,10 @@ const Hero = () => {
           <div className="w-[95%] mx-auto flex flex-col">
             <div className="w-[100%] md:w-[90%] flex flex-col lg:pt-12">
               <button className="bg-heroPrimary hover:bg-Primary transition duration-200 ease-in-out  md:w-[100%]  text-white flex items-center py-2 justify-around sm:py-4 px-1 sm:px-4 rounded-lg">
-                <p className="flex font-montserrat text-[18px] sm:text-[17px] md:text-[20px]">
-                  <p>{t(`hero1.btn.left`)}</p>{t(`hero1.btn.right`)}
+                <p className="flex font-montserrat text-[18px] sm:text-[17px] md:text-[17px]">
+                  <p>{t(`hero1.btn.left`)}</p><div className="hidden md:flex">{t(`hero1.btn.right`)}</div>
                 </p>
-                <div className="w-[30px] h-[30px] md:w-[38.89px] md:h-[38.89px] ">
+                <div className="w-[30px] h-[30px] md:w-[38.89px] md:h-[38.89px]">
                   <img
                     className="sm:ml-3 ml-1"
                     src={"/calc.svg"}

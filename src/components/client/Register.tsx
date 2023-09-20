@@ -28,7 +28,7 @@ const Register: FC<propsRegister> = ({ setIsRegister, setIsLogin }) => {
     setIsLogin(true);
   };
 
-  const { setUser } = useContext(UserContext)
+  const { setUser, setIsUser } = useContext(UserContext)
 
   
 
@@ -62,6 +62,7 @@ const Register: FC<propsRegister> = ({ setIsRegister, setIsLogin }) => {
 
   useEffect(() => {
     getData()
+    count + 1;
   }, [])
 
   
@@ -73,7 +74,7 @@ const Register: FC<propsRegister> = ({ setIsRegister, setIsLogin }) => {
     Cookies.set("token", JSON.stringify(data?.msg?.accsess))
     Cookies.set("user", JSON.stringify(postData))
     setIsRegister(false)
-    console.log(data)
+    setIsUser(true)
     await getData()
   }
 
