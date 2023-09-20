@@ -1,2 +1,5 @@
 export { default as UserHomePage} from './UserHomePage.tsx'
 export { default as Gruze} from './Gruze.tsx'
+export { default as Profile} from './Profile.tsx'
+export { default as UserMessage} from './UserMessage.tsx'
+export { default as UserChat} from './UserChat.tsx'

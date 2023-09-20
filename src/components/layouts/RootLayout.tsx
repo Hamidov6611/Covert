@@ -16,7 +16,7 @@ const RootLayout = ({children, title, desc}: RootLayoutProps) => {
             <title>{title}</title>
             <meta name="description" content={desc} />
         </Helmet>
-          <nav>
+          <nav className='sticky z-50 top-0'>
             <Navbar />
           </nav>
           <main>{children}</main>

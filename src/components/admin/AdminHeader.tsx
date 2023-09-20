@@ -4,7 +4,7 @@ import { IconButton } from '@mui/material';
 const AdminHeader = () => {
  
   return (
-    <div className='h-[100px] bg-Primary flex flex-row items-center'>
+    <div className='h-[100px] bg-Primary flex flex-row items-center z-40'>
       <div className='w-[100%] flex flex-row justify-between'>
         <div className='ml-8'>
           <IconButton>

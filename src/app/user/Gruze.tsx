@@ -17,7 +17,7 @@ const Gruze = () => {
           </span>
         </p>
 
-        <div className="flex md:flex-row flex-col bg-white w-[90%] justify-between p-4 md:p-6 mt-6 shadow-xl border rounded-md mb-12">
+        <div className="flex md:flex-row flex-col bg-white w-[96%] md:w-[90%] justify-between p-4 md:p-6 mt-6 shadow-xl border rounded-md mb-12">
           <div className="w-full md:w-[50%]">
             <p className="font-medium md:font-semibold text-lightGreey text-[16px]  mb-3 md:text-[20px] lg:text-[24px]">
               Офисные документы
@@ -120,7 +120,7 @@ const Gruze = () => {
             </div>
           </div>
           <div className="w-full mt-6 md:mt-0 md:w-[50%]">
-            <div className="w-[90%] mx-auto">
+            <div className="w-[98%] md:w-[90%] mx-auto">
             <img
               src={"/map.svg"}
               alt="map"

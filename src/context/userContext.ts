@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-type User = {
+export type User = {
   id?: number;
   adress?: string | null;
   context?: string | null;
@@ -13,17 +13,17 @@ type User = {
 };
 export type userContextType = {
   user: User;
-  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  // setUser: React.Dispatch<React.SetStateAction<User | null>>;
 };
 
 export type AuthUser = {
   user: User
-  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  setUser: (value: User) => void;
 };
 
 export type UserContextProviderType = {
   children: React.ReactNode;
 };
 
-export const UserContext = createContext<userContextType | null>(null);
+export const UserContext = createContext<User>({});
 

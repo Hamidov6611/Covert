@@ -16,9 +16,11 @@ const UserSidebar = () => {
             </div>
             <span className="ml-3 font-medium">Мои отправления</span>
           </Link>
-          <Link to="/user-home"
+          <div onClick={() => setMenu({...menu, menu2: true, menu1: false})}>
+
+          <Link to="/user-message"
+           
             className={`${menu.menu2 ? 'bg-white border-l-[5px] py-[15px] border-l-[#1348F9] text-[#2F2E40CC]' : "text-white ml-[5px]"} flex items-center px-4 py-2`}
-           onClick={() => setMenu({...menu, menu2: true, menu1: false})}
           >
             <div className="w-6 h-5 cursor-pointer">
               <img src="/side5.svg" alt="side1" width={100} height={100} />
@@ -26,6 +28,7 @@ const UserSidebar = () => {
             <span className="ml-3 font-medium">Сообщения</span>
           </Link>
           
+          </div>
         </nav>
       </div>
     </aside>

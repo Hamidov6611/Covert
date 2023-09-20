@@ -10,6 +10,8 @@ import { ForgotPassword, Login, Register } from ".";
 import { useTranslation } from "react-i18next";
 import { UserContext } from "../../context/userContext";
 
+import { SideContext } from "../../context/sidemenu";
+
 
 type langType = {
   id: number;
@@ -34,9 +36,12 @@ const Navbar = (): ReactNode => {
   const [t, i18n] = useTranslation("global");
   const [isHead, setIsHead] = useState<boolean>(false);
 
-  const {user, setUser} = useContext(UserContext)
+ 
 
-  console.log(user)
+  const {user} = useContext(UserContext)
+  const {setSide} = useContext(SideContext)
+
+
 
   const changeLang = () => setIsLang((prev) => !prev);
 
@@ -52,23 +57,23 @@ const Navbar = (): ReactNode => {
         item.selected = true;
       }
     });
-    console.log(newArr);
-    console.log(id);
     setLang(newArr);
   };
 
-
-  const logOut = () => {
-    setUser(null)
-    
+  const clickHandler = () => {
+    if(user?.username?.length < 0) {
+      setIsRegister(true)
+    }else {
+      setSide((prev: boolean) => !prev)
+    }
   }
-
   
   return (
-    <div>
+    <div className="">
       <div
-        className={`h-[90px] lg:h-[133px] w-full bg-[#1348F9] hidden lg:flex items-center `}
+        className={`h-[90px] lg:h-[133px] w-full bg-[#1348F9] hidden lg:flex items-center left-0 top-0 sticky top-0 z-50`}
       >
+       
         <div className="w-[100%] md:w-[90%] mx-auto lg:flex items-center hidden">
           <Link to={"/"} className="w-[18%]">
             <img
@@ -116,14 +121,18 @@ const Navbar = (): ReactNode => {
               </Link>
             </div>
             <div className="w-[55%] flex justify-end items-center">
-              <button
+              {!(user && user?.username?.length > 0) && (
+                <button
                 onClick={() => setIsLogin(true)}
                 className="text-[18px] font-semibold text-white mr-5 hover:text-gray-900"
               >
                 {t(`nav.auth1`)}
               </button>
+              )}
               {user && user?.username?.length > 0 ? (
-                <button className="font-bold mr-5 text-[17px] border text-white p-3 rounded-md  hover:border-transparent transition duration-200 ease-in-out hover:bg-white hover:text-[#1348F9]">
+                <button
+                onClick={() => setSide((prev: boolean) => !prev)}
+                className="font-bold mr-5 text-[17px] border text-white p-3 rounded-md  hover:border-transparent transition duration-200 ease-in-out hover:bg-white hover:text-[#1348F9]">
                   {user?.username}
                 </button>
               ) : (
@@ -226,15 +235,15 @@ const Navbar = (): ReactNode => {
         />
       )}
 
-      <div className="h-[80px] lg:hidden">
+      <div className="h-[80px] lg:hidden ">
         <Box sx={{ flexGrow: 1 }}>
           <div
             style={{ position: "fixed", top: 0 }}
             className={`${
-              isMenu ? "bg-[#050038]" : "bg-white"
-            } w-[100%] shadow-xl py-2 px-3 sticky top-0 z-50`}
+              isMenu ? "bg-[#050038] " : "bg-white"
+            } w-[100%] shadow-xl py-2 px-3 sticky top-0 z-50 `}
           >
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", justifyContent: "space-between " }}>
               <Link to={"/"}>
                 <div className="w-[38%]">
                   {isMenu ? (
@@ -260,10 +269,10 @@ const Navbar = (): ReactNode => {
               <div>
                 {!isMenu && (
                   <button
-                    onClick={() => setIsRegister(true)}
+                    onClick={clickHandler}
                     className="bg-[#1348F9] mr-5 py-2 px-4 rounded-full text-white font-semibold"
                   >
-                    {t(`nav.auth2`)}
+                    {user?.username.length > 0 ? user?.username : t(`nav.auth2`)}
                   </button>
                 )}
                 {isMenu ? (
