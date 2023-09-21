@@ -1,6 +1,6 @@
 import { AddClientButton, ClientTable } from "../../components/admin";
 import AdminLayout from "../../components/layouts/AdminLayout";
-
+import "./table.css";
 const Client = () => {
   return (
     <AdminLayout>

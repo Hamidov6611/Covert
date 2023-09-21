@@ -1,4 +1,4 @@
-import './side.css'
+import "./side.css";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,6 +8,7 @@ const AdminSidebar = () => {
   const [side3Drop, setSide3Drop] = useState(true);
   const [side4Drop, setSide4Drop] = useState(true);
   const [side5Drop, setSide5Drop] = useState(true);
+  const [side6Drop, setSide6Drop] = useState(true);
   return (
     <div className="w-[20%] fixed top-0 left-0 overflow-y-scroll h-[100vh] bg-[#2F2E40]">
       <div className="w-[100%] flex flex-col">
@@ -20,17 +21,11 @@ const AdminSidebar = () => {
           <div className="flex flex-col mt-8 gap-y-8 ">
             <Link
               to={"/admin"}
-              
               className={`text-heroLight nav-link focus:bg-white focus:py-3 focus:text-black flex justify-between items-center`}
             >
               <div className="flex w-[100%] mx-6">
                 <div className="w-7 h-6">
-                  <img
-                    src="/side1.svg"
-                    alt="side1"
-                    width={100}
-                    height={100}
-                  />
+                  <img src="/side1.svg" alt="side1" width={100} height={100} />
                 </div>
                 <div>
                   <p className="ml-4 font-medium">Информационная панель</p>
@@ -64,24 +59,14 @@ const AdminSidebar = () => {
                     className="w-2 h-2"
                     onClick={() => setSide1Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/side.svg"
-                      alt="side1"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/side.svg" alt="side1" width={100} height={100} />
                   </div>
                 ) : (
                   <div
                     className="w-3 h-2"
                     onClick={() => setSide1Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/back.svg"
-                      alt="side2"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/back.svg" alt="side2" width={100} height={100} />
                   </div>
                 )}
               </div>
@@ -90,7 +75,6 @@ const AdminSidebar = () => {
               <div className="flex flex-col bg-[#888]">
                 <Link
                   to={"/addclient"}
-                  
                   className={`text-[#0000009c] focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
@@ -102,7 +86,6 @@ const AdminSidebar = () => {
                 </Link>
                 <Link
                   to={"/client"}
-                  
                   className={`text-[#0000009c]  focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
@@ -114,6 +97,73 @@ const AdminSidebar = () => {
                 </Link>
               </div>
             )}
+
+            <div
+              className={`text-heroLight cursor-pointer nav-link flex justify-between items-center`}
+            >
+              <div className="flex w-[100%] mx-6 items-center justify-between">
+                <div className="flex  focus:text-black">
+                  <div className="w-7 h-6 cursor-pointer">
+                    <img
+                      src="/iconmonstr-product-3.svg"
+                      alt="side1"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+                  <div>
+                    <p
+                      className="ml-4 font-medium"
+                      onClick={() => setSide6Drop((prev) => !prev)}
+                    >
+                      Продукты
+                    </p>
+                  </div>
+                </div>
+                {side6Drop ? (
+                  <div
+                    className="w-2 h-2"
+                    onClick={() => setSide6Drop((prev) => !prev)}
+                  >
+                    <img src="/side.svg" alt="side1" width={100} height={100} />
+                  </div>
+                ) : (
+                  <div
+                    className="w-3 h-2"
+                    onClick={() => setSide6Drop((prev) => !prev)}
+                  >
+                    <img src="/back.svg" alt="side2" width={100} height={100} />
+                  </div>
+                )}
+              </div>
+            </div>
+            {!side6Drop && (
+              <div className="flex flex-col bg-[#888]">
+                <Link
+                  to={"/add-service"}
+                  className={`text-[#0000009c] focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                >
+                  <div className="flex w-[100%] mx-6 ">
+                    <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
+                    <div className="">
+                      <p className="ml-4  font-medium">Добавить Услуги</p>
+                    </div>
+                  </div>
+                </Link>
+                <Link
+                  to={"/add-blog"}
+                  className={`text-[#0000009c]  focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                >
+                  <div className="flex w-[100%] mx-6 ">
+                    <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
+                    <div className="">
+                      <p className="ml-4  font-medium">Добавить Блог</p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            )}
+
             <div
               className={`text-heroLight cursor-pointer nav-link flex justify-between items-center`}
             >
@@ -141,24 +191,14 @@ const AdminSidebar = () => {
                     className="w-2 h-2"
                     onClick={() => setSide2Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/side.svg"
-                      alt="side1"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/side.svg" alt="side1" width={100} height={100} />
                   </div>
                 ) : (
                   <div
                     className="w-3 h-2"
                     onClick={() => setSide2Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/back.svg"
-                      alt="side2"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/back.svg" alt="side2" width={100} height={100} />
                   </div>
                 )}
               </div>
@@ -167,7 +207,6 @@ const AdminSidebar = () => {
               <div className="flex flex-col bg-[#888]">
                 <Link
                   to={"/addshippers"}
-                  
                   className={`text-[#0000009c] focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
@@ -181,7 +220,6 @@ const AdminSidebar = () => {
                 </Link>
                 <Link
                   to={"/shippers"}
-                  
                   className={`text-[#0000009c] focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
@@ -223,24 +261,14 @@ const AdminSidebar = () => {
                     className="w-2 h-2"
                     onClick={() => setSide3Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/side.svg"
-                      alt="side1"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/side.svg" alt="side1" width={100} height={100} />
                   </div>
                 ) : (
                   <div
                     className="w-3 h-2"
                     onClick={() => setSide3Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/back.svg"
-                      alt="side2"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/back.svg" alt="side2" width={100} height={100} />
                   </div>
                 )}
               </div>
@@ -249,7 +277,6 @@ const AdminSidebar = () => {
               <div className="flex flex-col bg-[#888]">
                 <Link
                   to={"/addconsignees"}
-                  
                   className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
@@ -263,7 +290,6 @@ const AdminSidebar = () => {
                 </Link>
                 <Link
                   to={"/consignees"}
-                  
                   className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
@@ -305,24 +331,14 @@ const AdminSidebar = () => {
                     className="w-2 h-2"
                     onClick={() => setSide4Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/side.svg"
-                      alt="side1"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/side.svg" alt="side1" width={100} height={100} />
                   </div>
                 ) : (
                   <div
                     className="w-3 h-2"
                     onClick={() => setSide4Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/back.svg"
-                      alt="side2"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/back.svg" alt="side2" width={100} height={100} />
                   </div>
                 )}
               </div>
@@ -331,7 +347,6 @@ const AdminSidebar = () => {
               <div className="flex flex-col bg-[#888]">
                 <Link
                   to={"/adddispatch"}
-                  
                   className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
@@ -343,7 +358,6 @@ const AdminSidebar = () => {
                 </Link>
                 <Link
                   to={"/dispatch"}
-                  
                   className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
@@ -385,24 +399,14 @@ const AdminSidebar = () => {
                     className="w-2 h-2"
                     onClick={() => setSide5Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/side.svg"
-                      alt="side1"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/side.svg" alt="side1" width={100} height={100} />
                   </div>
                 ) : (
                   <div
                     className="w-3 h-2"
                     onClick={() => setSide5Drop((prev) => !prev)}
                   >
-                    <img
-                      src="/back.svg"
-                      alt="side2"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/back.svg" alt="side2" width={100} height={100} />
                   </div>
                 )}
               </div>
@@ -411,7 +415,6 @@ const AdminSidebar = () => {
               <div className="flex flex-col bg-[#888]">
                 <Link
                   to={"/message"}
-                  
                   className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
@@ -421,23 +424,16 @@ const AdminSidebar = () => {
                     </div>
                   </div>
                 </Link>
-                
               </div>
             )}
 
-           
             <Link
               to={"/wallet"}
               className={`text-heroLight nav-link flex justify-between items-center`}
             >
               <div className="flex w-[100%] mx-6">
                 <div className="w-7 h-6">
-                  <img
-                    src="/side6.svg"
-                    alt="side1"
-                    width={100}
-                    height={100}
-                  />
+                  <img src="/side6.svg" alt="side1" width={100} height={100} />
                 </div>
                 <div>
                   <p className="ml-4 text-heroLight font-medium">Кошелек</p>
@@ -450,12 +446,7 @@ const AdminSidebar = () => {
             >
               <div className="flex w-[100%] mx-6">
                 <div className="w-7 h-6">
-                  <img
-                    src="/side7.svg"
-                    alt="side1"
-                    width={100}
-                    height={100}
-                  />
+                  <img src="/side7.svg" alt="side1" width={100} height={100} />
                 </div>
                 <div>
                   <p className="ml-4 text-heroLight font-medium">Тарифы</p>
@@ -468,12 +459,7 @@ const AdminSidebar = () => {
             >
               <div className="flex w-[100%] mx-6">
                 <div className="w-7 h-6">
-                  <img
-                    src="/side8.svg"
-                    alt="side1"
-                    width={100}
-                    height={100}
-                  />
+                  <img src="/side8.svg" alt="side1" width={100} height={100} />
                 </div>
                 <div>
                   <p className="ml-4 text-heroLight font-medium">В пути</p>
@@ -483,12 +469,7 @@ const AdminSidebar = () => {
             <Link to={"/admin"} className="nav-link flex mb-12">
               <div className="flex w-[100%] mx-6">
                 <div className="w-7 h-6">
-                  <img
-                    src="/side9.svg"
-                    alt="side1"
-                    width={100}
-                    height={100}
-                  />
+                  <img src="/side9.svg" alt="side1" width={100} height={100} />
                 </div>
                 <div>
                   <p className="ml-4 text-heroLight font-medium">Настройки</p>
