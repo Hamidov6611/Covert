@@ -4,7 +4,7 @@ const Hero = () => {
   const [t] = useTranslation("global");
   return (
     <div className="flex lg:flex-row flex-col w-[100%] mx-auto">
-      <div className="w-[95%] mx-auto lg:w-[45%] px-2 sm:px-0 sm:ml-[5%] mt-[3%] z-40">
+      <div className="w-[95%] mx-auto xl:w-[45%] px-2 sm:px-0 sm:ml-[5%] mt-[3%] z-40">
         <p className="hidden md:flex font-semibold md:font-bold text-[18px] mb-4 sm:mb-0 sm:text-[24px] md:text-[28px] lg:text-[65px] text-[#2F2E40]">
           {t(`hero1.title`)}
         </p>
@@ -79,7 +79,8 @@ const Hero = () => {
             <div className="w-[100%] md:w-[90%] flex flex-col lg:pt-12">
               <button className="bg-heroPrimary hover:bg-Primary transition duration-200 ease-in-out  md:w-[100%]  text-white flex items-center py-2 justify-around sm:py-4 px-1 sm:px-4 rounded-lg">
                 <p className="flex font-montserrat text-[18px] sm:text-[17px] md:text-[17px]">
-                  <p>{t(`hero1.btn.left`)}</p><div className="hidden md:flex">{t(`hero1.btn.right`)}</div>
+                  <p>{t(`hero1.btn.left`)}</p>
+                  <div className="hidden md:flex">{t(`hero1.btn.right`)}</div>
                 </p>
                 <div className="w-[30px] h-[30px] md:w-[38.89px] md:h-[38.89px]">
                   <img
@@ -99,8 +100,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-[100%] lg:w-[55%]  lg:flex justify-end relative">
-        <div className="z-20 sticky ">
+      <div className="w-[100%] lg:w-[55%] hidden  xl:flex justify-end relative">
+        <div className="z-20 absolute right-0 bottom-0 ">
           <img
             src={"/hero.svg"}
             alt={"hero"}
@@ -109,16 +110,18 @@ const Hero = () => {
             style={{ zIndex: 2 }}
           />
         </div>
-        <div className="absolute right-0 bottom-0 md:bottom-[42px] w-[320px] lg:w-[850px] z-10">
+        <div className="absolute right-0 bottom-0 w-[320px] lg:w-[100%] z-10">
           <img
             src={"/fullRight.svg"}
-            width={850}
+            // width={850}
             alt={"check"}
             height={718}
             style={{ zIndex: 1 }}
+            className="md:hidden lg:flex"
           />
         </div>
       </div>
+      
     </div>
   );
 };

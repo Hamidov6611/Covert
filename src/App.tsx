@@ -25,7 +25,7 @@ import {
   Way,
 } from "./app/dashboard";
 import Cookies from "js-cookie";
-import { UserContext } from "./context/userContext";
+import {User, UserContext } from "./context/userContext";
 import { useEffect, useState } from "react";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import {
@@ -40,9 +40,12 @@ import AddServices from "./app/dashboard/AddServices";
 import AddBlog from "./app/dashboard/AddBlog";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Maps from "./Map";
+import EditShipersTable from "./components/admin/a/editShipers";
+import EditConsignees from "./components/admin/b/editConsignees";
 
 function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState<User>();
   const [side, setSide] = useState(false);
   const [isUser, setIsUser] = useState(false);
   useEffect(() => {
@@ -119,6 +122,7 @@ function App() {
           )}
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/map" element={<Maps />} />
             <Route path="/services" element={<Service />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
@@ -128,6 +132,8 @@ function App() {
             <Route path="/addclient" element={<AddClient />} />
             <Route path="/client" element={<Clients />} />
             <Route path="/addshippers" element={<AddShippers />} />
+            <Route path="/editshippers/:id" element={<EditShipersTable />} />
+            <Route path="/editconsignees/:id" element={<EditConsignees />} />
             <Route path="/shippers" element={<Shippers />} />
             <Route path="/addconsignees" element={<AddConsignessComp />} />
             <Route path="/consignees" element={<Conignees />} />

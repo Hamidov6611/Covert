@@ -179,7 +179,7 @@ const StepperForm = () => {
       </div>
       <form>
         {/* Step1 section */}
-        <div>{step.step1 && <Step1 setID={setID} />}</div>
+        <div>{step.step1 && <Step1 setID={setID} setStep={setStep} step={step} />}</div>
         {/* Step2 section */}
         <div>
           {step.step2 && (

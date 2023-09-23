@@ -1,14 +1,17 @@
 import { Switch } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import {
-  FullscreenControl,
-  GeoObject,
-  GeolocationControl,
-  Map,
-  YMaps,
-  ZoomControl,
-} from "react-yandex-maps";
+// import {
+//   FullscreenControl,
+//   GeoObject,
+//   GeolocationControl,
+//   Map,
+//   Polyline,
+//   YMaps,
+//   ZoomControl,
+// } from "react-yandex-maps";
 import Loader from "./Loader";
+import "./send.css";
+import { MapContainer, Polyline, TileLayer } from "react-leaflet";
 interface Step2Props {
   checked: boolean;
   startCity: string;
@@ -75,7 +78,18 @@ const Step2 = ({
   useEffect(() => {
     getData("London");
   }, []);
- 
+  console.log({
+    checked,
+    startCity,
+    endCity,
+    sendDate,
+    getDate,
+    setChecked,
+    setStartCity,
+    setEndCity,
+    setSendDate,
+    setGetDate,
+  });
   const getData2 = async (city: string) => {
     const base = "https://api.openweathermap.org/data/2.5/weather";
     const query = `?q=${city}&units=metric&appid=${KEY}`;
@@ -225,35 +239,19 @@ const Step2 = ({
           </div>
         </div>
         <div className="w-[100%] md:w-[62%] flex flex-col">
-          <YMaps>
-            <div>
-              <Map
-                defaultState={{
-                  center: [55.751574, 37.573856],
-                  zoom: 9,
-                }}
-                width={"100%"}
-                height={"150px"}
-              >
-                {(view && st && st2 )&& (
-                  <GeoObject
-                    geometry={{
-                      type: "LineString",
-                      coordinates: [st, st2],
-                    }}
-                    options={{
-                      geodesic: true,
-                      strokeWidth: 5,
-                      strokeColor: "#fc030f",
-                    }}
-                  />
-                )}
-                <FullscreenControl options={{ float: "left" }} />
-                <GeolocationControl options={{ float: "right" }} />
-                <ZoomControl options={{ float: "right" }} />
-              </Map>
-            </div>
-          </YMaps>
+          {view && st && st2 && (
+            <MapContainer
+              center={[48.5278, 31.5021]}
+              zoom={3}
+              style={{ height: "500px", width: "100%" }}
+            >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
+              <Polyline positions={[st, st2]} color="blue" />
+            </MapContainer>
+          )}
         </div>
       </div>
       <div className="mt-12 flex w-[100%] justify-center">

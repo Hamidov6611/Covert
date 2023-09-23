@@ -1,12 +1,11 @@
 
-import { AddShippersComp } from "../../components/admin";
-import { Link } from "react-router-dom";
-import AdminLayout from "../../components/layouts/AdminLayout";
+import EditShippersComp from "./EditShipersComp";
+import { Link, useParams } from "react-router-dom";
+import AdminLayout from "../../layouts/AdminLayout";
 
-const AddShippers = () => {
+const EditShipersTable = () => {
+  const {id} = useParams()
 
- 
-  
   return (
    <AdminLayout>
      <div className="w-full p-6 flex flex-col gap-y-8 z-0">
@@ -41,11 +40,11 @@ const AddShippers = () => {
       </div>
 
       <div className='mt-8'>
-        <AddShippersComp />
+        <EditShippersComp id={id} />
       </div>
     </div>
    </AdminLayout>
   );
 };
 
-export default AddShippers;
+export default EditShipersTable;

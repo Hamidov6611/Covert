@@ -5,11 +5,11 @@ import { toast } from "react-toastify";
 
 interface addService {
   setRemove: (value: boolean) => void;
-  id: Number | undefined;
+  id: number;
   getData: () => void;
 }
 
-export default function AdminDelServiceModal({
+export default function AdminDelConModal({
   setRemove,
   id,
   getData,
@@ -17,10 +17,10 @@ export default function AdminDelServiceModal({
   const removeItem = async () => {
     try {
       await axios.delete(
-        `${BASE_URL}/a_api/admin_panel/service_deteiles_admin_views/${id}/`
+        `${BASE_URL}/c_dashboard/employe_deteiles_views/${id}/`
       );
+      toast.success("Грузоотправител успешно удалена");
       getData();
-      toast.success("Услуга успешно удалена");
       setRemove(false);
     } catch (error) {
       console.log(error);
@@ -36,7 +36,7 @@ export default function AdminDelServiceModal({
         onClick={(e) => e.stopPropagation()}
       >
         <p className="text-lightGreey flex w-[100%] justify-center mb-4 md:font-semibold md:text-[28px]">
-          Добавить Услуги
+        Удален Грузоотправител 
         </p>
         <div className="flex justify-between w-full">
           <Button

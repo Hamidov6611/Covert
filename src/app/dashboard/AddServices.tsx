@@ -37,21 +37,21 @@ interface serviceType {
 const AddServices = () => {
   const [open, setOpen] = useState(false);
   const [remove, setRemove] = useState(false);
-  const [removeId, setRemoveId] = useState(Number);
+  const [removeId, setRemoveId] = useState<Number | undefined>();
   const [data, setData] = useState<serviceType[]>([]);
   const [pageSize, setPageSize] = useState(Number);
   const [pageId, setPageId] = useState(1);
   const [loader, setLoader] = useState<boolean>(true);
 
   const [edit, setEdit] = useState(false);
-  const [editId, setEditId] = useState(Number);
+  const [editId, setEditId] = useState<Number | undefined>();
 
-  const handleRemove = (id: number) => {
+  const handleRemove = (id: number | undefined) => {
     setRemove(true);
     setRemoveId(id);
   };
 
-  const handleEdit = (id: number) => {
+  const handleEdit = (id: number | undefined) => {
     setEdit(true);
     setEditId(id);
   };

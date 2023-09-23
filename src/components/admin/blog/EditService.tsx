@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
@@ -8,6 +8,8 @@ import { Button, TextField } from "@mui/material";
 import axios from "axios";
 import { BASE_URL } from "../../../service/auth";
 import Cookies from "js-cookie";
+import { serviceType } from "./AddTabs";
+import { toast } from "react-toastify";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -57,12 +59,13 @@ function a11yProps(index: number) {
 //   };
 // }
 
-interface addService {
-    setOpen: (value: boolean) => void;
-  }
-  
+interface editService {
+  setOpen: (value: boolean) => void;
+  id: number;
+  getData1: () => void
+}
 
-export default function EditServiseTabs({setOpen}: addService) {
+export default function EditServiseTabs({ setOpen, id, getData1 }: editService) {
   const [value, setValue] = useState(0);
   const [img, setImg] = useState<string | ArrayBuffer | null>();
 
@@ -77,6 +80,8 @@ export default function EditServiseTabs({setOpen}: addService) {
     gl_content: "",
   });
 
+  console.log(id);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setData((prevState) => ({
@@ -86,11 +91,11 @@ export default function EditServiseTabs({setOpen}: addService) {
   };
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    console.log(event);
+    // console.log(event);
     setValue(newValue);
   };
 
-  const imgURL = (e) => {
+  const imgURL = (e: any) => {
     const reader = new FileReader();
 
     reader.onload = () => {
@@ -100,50 +105,82 @@ export default function EditServiseTabs({setOpen}: addService) {
 
     reader.readAsDataURL(e);
   };
-  const ImageChange = (e) => {
+  const ImageChange = (e: any) => {
     imgURL(e.target.files[0]);
   };
 
-  const submitData = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const getData = async () => {
     try {
-      const token: string | undefined = Cookies.get(`token`);
-      const postData = {
-        img: img,
-        translations: {
-          en: {
-            name: data.en_name,
-            content: data.en_content,
-          },
-          fi: {
-            name: data.fi_name,
-            content: data.fi_name,
-          },
-          nl: {
-            name: data.gl_name,
-            content: data.gl_content,
-          },
-          ru: {
-            name: data.ru_name,
-            content: data.ru_content,
-          },
-        },
-      };
-      const res = await axios.post(`${BASE_URL}`, postData, {
-        headers: { Authorization: `Bearer ${token != undefined ? token : ""}` },
+      const { data } = await axios.get(
+        `${BASE_URL}/a_api/admin_panel/blog_deteiles_admin_views/${id}/`
+      );
+      let editData: serviceType = data[0];
+      setData({
+        ...data,
+        ru_name: editData?.translations.ru.title,
+        ru_content: editData?.translations.ru.content,
+        en_name: editData?.translations.en.title,
+        en_content: editData?.translations.en.content,
+        fi_name: editData?.translations.fi.title,
+        fi_content: editData?.translations.fi.content,
+        gl_name: editData?.translations.nl.title,
+        gl_content: editData?.translations.nl.content,
       });
-      console.log(res);
+      console.log(data);
+      getData1()
     } catch (error) {
       console.log(error);
     }
   };
 
+  useEffect(() => {
+    getData();
+  }, [id]);
+
+  const submitData = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      // const token: string | undefined = Cookies.get(`token`);
+      const postData = {
+        img: img,
+        title: data.ru_name,
+        translations: {
+          en: {
+            title: data.en_name,
+            content: data.en_content,
+          },
+          fi: {
+            title: data.fi_name,
+            content: data.fi_name,
+          },
+          nl: {
+            title: data.gl_name,
+            content: data.gl_content,
+          },
+          ru: {
+            title: data.ru_name,
+            content: data.ru_content,
+          },
+        },
+      };
+      const res = await axios.put(
+        `${BASE_URL}/a_api/admin_panel/blog_deteiles_admin_views/${id}/`,
+        postData
+      );
+      console.log(res);
+      toast.success("Сервис успешно изменен");
+
+      setOpen(false)
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <form onSubmit={submitData}>
       <Box sx={{ width: "100%" }}>
         <p className="text-lightGreey flex w-[100%] justify-center mb-4 md:font-semibold md:text-[28px]">
-          Edit Услуги
+          Edit Блоги
         </p>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <label htmlFor="fileInput" className="custom-file-upload">
@@ -272,9 +309,12 @@ export default function EditServiseTabs({setOpen}: addService) {
             marginTop: "10px",
           }}
         >
-          <Button 
-          onClick={() => setOpen(false)}
-          sx={{ background: "red" }} type="button" variant="contained">
+          <Button
+            onClick={() => setOpen(false)}
+            sx={{ background: "red" }}
+            type="button"
+            variant="contained"
+          >
             Закрывать
           </Button>
           <Button

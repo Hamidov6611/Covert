@@ -6,7 +6,7 @@ const DispatchTable = () => {
     <div>
       <div>
         <div className="w-[100%] inline-block rounded-lg border shadow-2xl">
-          <table className="w-[100%] overflow-x-auto">
+          <table className="w-[100%] overflow-x-auto table">
             <thead className="w-full">
               <tr className="w-full">
                 <th className="text-center w-[15%] text-[19px] text-lightGreey font-semibold">

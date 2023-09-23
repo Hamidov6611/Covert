@@ -12,7 +12,7 @@ export default {
         'heroPrimary': '#1E86FA',
         'heroGreey': '#E9EDF2',
         "modalBg": 'rgba(0,0,0,.5)',
-        'heroLight': '#ABAFB6'
+        'heroLight': '#ABAFB6',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

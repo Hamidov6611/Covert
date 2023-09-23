@@ -5,14 +5,15 @@ export type User = {
   context?: string | null;
   email?: string;
   first_name?: string;
+  last_name?: string;
   groups?: {
     id?: number;
     name?: string;
     username?: string
   }[]
 };
-export type userContextType = {
-  user: User;
+export interface userContextType  extends User {
+  // user: User;
   // setUser: React.Dispatch<React.SetStateAction<User | null>>;
 };
 
@@ -25,5 +26,6 @@ export type UserContextProviderType = {
   children: React.ReactNode;
 };
 
-export const UserContext = createContext(null);
+export const UserContext = createContext<User | null>(null);
+
 

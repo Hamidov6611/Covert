@@ -1,12 +1,11 @@
 
-import { AddShippersComp } from "../../components/admin";
-import { Link } from "react-router-dom";
-import AdminLayout from "../../components/layouts/AdminLayout";
+import { Link, useParams } from "react-router-dom";
+import AdminLayout from "../../layouts/AdminLayout";
+import EditConsigneesComp from "./editConsigneesComp";
 
-const AddShippers = () => {
+const EditConsignees = () => {
+  const {id} = useParams()
 
- 
-  
   return (
    <AdminLayout>
      <div className="w-full p-6 flex flex-col gap-y-8 z-0">
@@ -15,7 +14,7 @@ const AddShippers = () => {
         <p className="text-[18px] mr-6 sm:text-[20px] md:text-[32px] flex items-center lg:text-[45px] text-lightGreey font-semibold">
         Добавление грузоотправителей |
         </p>
-        <Link to="/shippers" 
+        <Link to="/consignees" 
         className="bg-heroPrimary min-w-[300px] hover:bg-Primary transition duration-200 ease-in-out font-semibold text-white text-[18px] sm:text-[18px]  flex items-center justify-around py-2 sm:py-4 px-1 sm:px-8 rounded-lg">
             Просмотреть грузоотправителей
         </Link>
@@ -41,11 +40,11 @@ const AddShippers = () => {
       </div>
 
       <div className='mt-8'>
-        <AddShippersComp />
+        <EditConsigneesComp id={id} />
       </div>
     </div>
    </AdminLayout>
   );
 };
 
-export default AddShippers;
+export default EditConsignees;

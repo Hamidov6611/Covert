@@ -1,9 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../../service/auth";
 import { toast } from "react-toastify";
+import { BASE_URL } from "../../../service/auth";
 
-const AddShippersComp = () => {
+interface editSgipers {
+    id: string | undefined
+}
+
+const EditConsigneesComp = ({id}: editSgipers) => {
   const [postData, setPostData] = useState({
     address: "",
     context: "",
@@ -13,12 +17,11 @@ const AddShippersComp = () => {
     // id: 1,
     id_country: 0,
     id_city: 0,
-    id_group: 1,
+    id_group: 2,
     phone: "",
-    pochta_index: Number,
+    pochta_index: '',
     uidd: "",
   });
-
   const [country_list, setCountryList] = useState<
     { id: number; name: string }[]
   >([]);
@@ -31,8 +34,6 @@ const AddShippersComp = () => {
       [name]: value,
     }));
   };
-
-  // get country lists
   const getCountryLists = async () => {
     const { data } = await axios.get(
       `${BASE_URL}/a_api/admin_panel/counrty_list_views/`
@@ -49,6 +50,7 @@ const AddShippersComp = () => {
       setCityList(data);
     }
   };
+
   useEffect(() => {
     getCityLists();
   }, [postData.id_country]);
@@ -56,42 +58,49 @@ const AddShippersComp = () => {
   useEffect(() => {
     getCountryLists();
   }, []);
-
-  // const handleIdCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  //   setPostData({
-  //     ...postData,
-  //     id_country: {
-  //       ...postData.id_country,
-  //       id: parseInt(e.target.value),
-  //     },
-  //   });
-  // };
-
-  // const handleIdCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  //   setPostData({
-  //     ...postData,
-  //     id_city: {
-  //       ...postData.id_city,
-  //       id: parseInt(e.target.value),
-  //     },
-  //   });
-  // };
-
+ 
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      await axios.post(`${BASE_URL}/c_dashboard/employe_list_views/`, postData)
-      toast.success("Success")
+      await axios.put(`${BASE_URL}/c_dashboard/employe_deteiles_views/${id}/`, postData);
+      toast.success("Success");
     } catch (error) {
-      console.log(error)
+      console.log(error);
+    }
+  };
+
+  console.log(postData)
+
+  const getOneShipers = async () => {
+    try {
+        const {data} = await axios.get(`${BASE_URL}/c_dashboard/employe_deteiles_views/${id}/`)
+        // console.log(data)
+        setPostData({
+          ...postData,
+            uidd: data[0]?.uidd,
+            full_name: data[0]?.full_name,
+            address: data[0]?.address,
+            id_city: data[0]?.id_city?.id,
+            id_country: data[0]?.id_country?.id,
+            id_group: data[0]?.id_group?.id,
+            pochta_index: data[0]?.pochta_index,
+            context: data[0]?.context,
+            email: data[0]?.email,
+            phone: data[0]?.phone
+        })
+    } catch (error) {
+        console.log(error)
     }
   }
+  useEffect(() => {
+    getOneShipers()
+  }, [id])
   return (
     <form onSubmit={submitHandler} className="bg-white">
       <div className="my-4 mt-12 grid grid-cols-1 p-8 gap-x-8 gap-y-4">
         <div className="flex flex-col">
           <p className="mb-2 text-[#344054] font-medium text-[15px] sm:text-[21px] font-montserrat">
-            Идентификатор грузоотправителей
+            Идентификатор Грузополучатели
           </p>
           <input
             type="text"
@@ -124,7 +133,7 @@ const AddShippersComp = () => {
           <input
             type="text"
             className="border w-[100%] py-2 rounded-md text-[#667085] text-[14px] px-3 focus:outline-[#1348F9] font-medium"
-            placeholder="Введите Адрес "
+            placeholder="Введите Адрес"
             name="address"
             value={postData.address}
             onChange={handleInputChange}
@@ -139,7 +148,10 @@ const AddShippersComp = () => {
               </p>
               <select
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                  setPostData({...postData, id_country: parseInt(e.target.value)})
+                  setPostData({
+                    ...postData,
+                    id_country: parseInt(e.target.value),
+                  })
                 }
                 name=""
                 id=""
@@ -158,9 +170,12 @@ const AddShippersComp = () => {
                 Город
               </p>
               <select
-               onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                setPostData({...postData, id_city: parseInt(e.target.value)})
-              }
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                  setPostData({
+                    ...postData,
+                    id_city: parseInt(e.target.value),
+                  })
+                }
                 name=""
                 id=""
                 className="border w-[100%] py-2 rounded-md text-[#667085] text-[14px] px-3 focus:outline-[#1348F9] font-medium"
@@ -184,7 +199,7 @@ const AddShippersComp = () => {
             className="border w-[100%] py-2 rounded-md text-[#667085] text-[14px] px-3 focus:outline-[#1348F9] font-medium"
             placeholder="Введите Почтовый индекс"
             name="pochta_index"
-            // value={postData.pochta_index}
+            value={postData.pochta_index}
             onChange={handleInputChange}
             required
           />
@@ -246,8 +261,11 @@ const AddShippersComp = () => {
       </div>
 
       <div className="flex items-center justify-center mt-4">
-        <button type="submit" className="bg-heroPrimary min-w-[300px] justify-center hover:bg-Primary transition duration-200 ease-in-out font-semibold text-white text-[18px] sm:text-[18px]  flex items-center py-2 sm:py-3 px-1 sm:px-8 rounded-lg">
-          Добавить грузоотправителей
+        <button
+          type="submit"
+          className="bg-heroPrimary min-w-[300px] justify-center hover:bg-Primary transition duration-200 ease-in-out font-semibold text-white text-[18px] sm:text-[18px]  flex items-center py-2 sm:py-3 px-1 sm:px-8 rounded-lg"
+        >
+          Изменить грузоотправителей
         </button>
       </div>
 
@@ -260,4 +278,4 @@ const AddShippersComp = () => {
   );
 };
 
-export default AddShippersComp;
+export default EditConsigneesComp;

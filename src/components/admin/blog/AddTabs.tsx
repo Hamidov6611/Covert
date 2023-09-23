@@ -7,7 +7,8 @@ import "./service.css";
 import { Button, TextField } from "@mui/material";
 import axios from "axios";
 import { BASE_URL } from "../../../service/auth";
-import Cookies from "js-cookie";
+import { toast } from "react-toastify";
+
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -43,12 +44,13 @@ function a11yProps(index: number) {
 }
 
 interface formType {
-  name: string;
+  title: string;
   content: string;
 }
-
-interface serviceType {
+ 
+export interface serviceType {
   img: string;
+  title: string
   translations: {
     en: formType;
     fi: formType;
@@ -59,10 +61,11 @@ interface serviceType {
 
 interface addService {
     setOpen: (value: boolean) => void;
+    getData: () => void
   }
   
 
-export default function AddServiseTabs({setOpen}: addService) {
+export default function AddServiseTabs({setOpen, getData}: addService) {
   const [value, setValue] = useState(0);
   const [img, setImg] = useState<string | ArrayBuffer | null>();
 
@@ -90,7 +93,7 @@ export default function AddServiseTabs({setOpen}: addService) {
     setValue(newValue);
   };
 
-  const imgURL = (e) => {
+  const imgURL = (e: any) => {
     const reader = new FileReader();
 
     reader.onload = () => {
@@ -100,41 +103,44 @@ export default function AddServiseTabs({setOpen}: addService) {
 
     reader.readAsDataURL(e);
   };
-  const ImageChange = (e) => {
+  const ImageChange = (e: any) => {
     imgURL(e.target.files[0]);
   };
 
   const submitData = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const token: string | undefined = Cookies.get(`token`);
+      // const token: string | undefined = Cookies.get(`token`);
       const postData: serviceType = {
         img: img,
+        title: data.ru_name,
         translations: {
           en: {
-            name: data.en_name,
+            title: data.en_name,
             content: data.en_content,
           },
           fi: {
-            name: data.fi_name,
+            title: data.fi_name,
             content: data.fi_name,
           },
           nl: {
-            name: data.gl_name,
+            title: data.gl_name,
             content: data.gl_content,
           },
           ru: {
-            name: data.ru_name,
+            title: data.ru_name,
             content: data.ru_content,
           },
         },
       };
-      const res = await axios.post(`${BASE_URL}`, postData, {
-        headers: { Authorization: `Bearer ${token != undefined ? token : ""}` },
-      });
-      console.log(res);
+      await axios.post(`${BASE_URL}/a_api/admin_panel/blog_all_admin_views/`, postData,);
+      getData()
+      toast.success("Блог успешно добавлена")
+      setOpen(false)
     } catch (error) {
+      toast.error("Блог не добавлен")
       console.log(error);
+    
     }
   };
 

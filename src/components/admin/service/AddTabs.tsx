@@ -49,7 +49,11 @@ interface formType {
 }
  
 export interface serviceType {
-  img: string;
+  content: string,
+  id: number,
+  name: string,
+  img: string,
+  visible: boolean,
   translations: {
     en: formType;
     fi: formType;

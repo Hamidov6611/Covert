@@ -4,12 +4,36 @@ import { useEffect, useState } from "react";
 import { cardProps } from "../../interface";
 import Loader from "./Loader";
 
-interface Step1Props {
-  setID: (value: string) => void;
+export interface stepType {
+  step1: boolean,
+  step2: boolean,
+  step3: boolean,
+  step4: boolean,
+  active1: boolean,
+  active2: boolean,
+  active3: boolean,
+  active4: boolean,
 }
 
-const Step1 = ({ setID }: Step1Props) => {
+interface Step1Props {
+  setID: (value: string) => void;
+  setStep?: (value: stepType) => void,
+  step: stepType
+}
+
+const Step1 = ({ setID, setStep, step }: Step1Props) => {
   const [data, setData] = useState([]);
+
+  const stepHandler = () => {
+    setStep({
+      ...step,
+      step2: !step.step2,
+      step1: false,
+      step3: false,
+      step4: false,
+    })
+  }
+
   const [loader, setLoader] = useState<boolean>(true);
   const getCardData = async () => {
     try {
@@ -60,7 +84,7 @@ const Step1 = ({ setID }: Step1Props) => {
         ))}
       </div>
       <div className="flex w-full justify-end text-white ">
-        <button className="py-2 px-6 text-[18px] font-montserrat bg-Primary rounded-md mt-8 md:mt-0">
+        <button onClick={stepHandler} className="py-2 px-6 text-[18px] font-montserrat bg-Primary rounded-md mt-8 md:mt-0">
           Следующий
         </button>
       </div>

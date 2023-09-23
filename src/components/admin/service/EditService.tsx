@@ -61,7 +61,7 @@ function a11yProps(index: number) {
 
 interface editService {
   setOpen: (value: boolean) => void;
-  id: number;
+  id: Number | undefined;
   getData1: () => void
 }
 
@@ -91,11 +91,11 @@ export default function EditServiseTabs({ setOpen, id, getData1 }: editService) 
   };
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    // console.log(event);
+    console.log(event);
     setValue(newValue);
   };
 
-  const imgURL = (e) => {
+  const imgURL = (e: any) => {
     const reader = new FileReader();
 
     reader.onload = () => {
@@ -105,7 +105,7 @@ export default function EditServiseTabs({ setOpen, id, getData1 }: editService) 
 
     reader.readAsDataURL(e);
   };
-  const ImageChange = (e) => {
+  const ImageChange = (e: any) => {
     imgURL(e.target.files[0]);
   };
 
@@ -127,7 +127,7 @@ export default function EditServiseTabs({ setOpen, id, getData1 }: editService) 
         gl_content: editData?.translations.nl.content,
       });
       console.log(data);
-      toast.success("Сервис успешно изменен");
+      
       getData1()
     } catch (error) {
       console.log(error);
@@ -141,7 +141,7 @@ export default function EditServiseTabs({ setOpen, id, getData1 }: editService) 
   const submitData = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const token: string | undefined = Cookies.get(`token`);
+      // const token: string | undefined = Cookies.get(`token`);
       const postData = {
         img: img,
         translations: {
@@ -169,6 +169,7 @@ export default function EditServiseTabs({ setOpen, id, getData1 }: editService) 
       );
       console.log(res);
       setOpen(false)
+      toast.success("Сервис успешно изменен");
     } catch (error) {
       console.log(error);
     }

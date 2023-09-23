@@ -1,3 +1,7 @@
 import { createContext } from "react";
 
-export const SideContext = createContext(false)
+export interface sideType {
+    side: boolean,
+}
+
+export const SideContext = createContext<sideType | boolean>(false)
